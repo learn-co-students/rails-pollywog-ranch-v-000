@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -12,18 +13,18 @@
 
 ActiveRecord::Schema.define(version: 20140922151507) do
 
-  create_table "frogs", force: :cascade do |t|
+  create_table "frogs", force: true do |t|
     t.string  "name"
     t.string  "color"
     t.integer "pond_id"
   end
 
-  create_table "ponds", force: :cascade do |t|
-    t.string "water_type"
+  create_table "ponds", force: true do |t|
     t.string "name"
+    t.string "water_type"
   end
 
-  create_table "tadpoles", force: :cascade do |t|
+  create_table "tadpoles", force: true do |t|
     t.string  "name"
     t.string  "color"
     t.integer "frog_id"
