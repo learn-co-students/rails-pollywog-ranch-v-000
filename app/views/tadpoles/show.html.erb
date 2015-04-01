@@ -1,8 +1,9 @@
 <div class="card">
   <h1><%= @tadpole.name %> the Tadpole</h1>
-  <p>
-    <a href="/tadpoles/<%= @tadpole.id %>/metamorphosize" class="btn btn-primary">Become to frog</a>
-  </p>
+
+  <!-- make form to make "Become a frog" button here -->
+  <!-- the form should post to /tadpoles/:id/metamorphosize -->
+
   <p>Color: <%= @tadpole.color %></p>
   <p>Parent: <a href="/frogs/<%= @tadpole.frog.id %>"><%= @tadpole.frog.name %></a></p>
   <p>Lives: <a href="/ponds/<%= @tadpole.pond.id %>"><%= @tadpole.pond.name %></a></p>
