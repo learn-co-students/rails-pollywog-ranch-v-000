@@ -14,7 +14,7 @@ Help Frog Rancher Darryl categorize and track all the ponds, frogs, and tadpoles
 
 ## Background 
 
-After speaking with Darryl he has informed us that he has several ponds on his ranch. Each pond has different frogs that live there. Some of those frogs have tadpole babies. The frogs all have the ability to have tadpoles at any given time and the tadpoles have the ability to metamorphosize into frogs at any time. 
+After speaking with Darryl, he has informed us that he has several ponds on his ranch. Each pond has different frogs that live there. Some of those frogs have tadpole babies. The frogs all have the ability to have tadpoles at any given time and the tadpoles have the ability to metamorphosize into frogs at any time. 
 
 ## Example
 
@@ -40,7 +40,7 @@ Here's a [demo](http://the-pollywog-ranch.herokuapp.com/) of what we're aiming f
 * You can refer to this link as a quick reference for the Rails 4 folder structure along the way [here](http://www.tutorialspoint.com/ruby-on-rails/rails-directory-structure.htm).
 
 #### Running the App Locally
-* When your finished and all the specs are passing, go ahead and run the following commands from your terminal:
+* When you're finished and all the specs are passing, go ahead and run the following commands from your terminal:
   * rake db:migrate
   * rake db:seed
   * rails s
