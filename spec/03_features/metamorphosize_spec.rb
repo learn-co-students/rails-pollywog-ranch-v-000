@@ -7,7 +7,7 @@ describe "Metamorphosize" do
     visit "/tadpoles/#{@tadpole.id}"
   end
 
-  it "has a button called 'Become a Frog' on the tadpole show page" do
+  it "has a button called 'Become a frog' on the tadpole show page" do
     expect(page).to have_button('Become a frog')
   end
 
