@@ -1,8 +1,4 @@
----
-language: ruby
-tags: rails, activerecord, associations, models
-resources: 4
----
+
 
 ![tadpoles and frogs](/app/assets/images/intro-image.jpeg)
 
