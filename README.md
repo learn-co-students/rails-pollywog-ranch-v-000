@@ -1,5 +1,4 @@
 
-
 ![tadpoles and frogs](/app/assets/images/intro-image.jpeg)
 
 # Pollywog Ranch
@@ -21,7 +20,7 @@ Here's a [demo](http://the-pollywog-ranch.herokuapp.com/) of what we're aiming f
 #### Getting Started
 * Run `bundle install` then `rspec` to see what course to take. Keep in mind that for the association of tadpoles belonging to a pond through frog, you'll have to [delegate](http://stackoverflow.com/a/11457714).
 * Take a look at the tests in `spec/models` before writing your migrations. 
-* Once you mirgrations are done, start on the associations in your models.
+* Once your migrations are done, start on the associations in your models.
 * Once the associations are passing, you'll be modifying three files:
   
   1. app/controllers/tadpoles_controller.rb
