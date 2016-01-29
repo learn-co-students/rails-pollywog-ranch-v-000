@@ -48,4 +48,4 @@ After speaking with Darryl, he has informed us that he has several ponds on his 
 * [Tutorials Point: Ruby on Rails](http://www.tutorialspoint.com/ruby-on-rails/) - [Ruby on Rails Directory Structure](http://www.tutorialspoint.com/ruby-on-rails/rails-directory-structure.htm)
 * [Rails Guides on Routing](http://guides.rubyonrails.org/routing.html) - [Nested Resources](http://guides.rubyonrails.org/routing.html#nested-resources)
 
-<a href='https://learn.co/lessons/rails-pollywog-ranch' data-visibility='hidden'>View this lesson on Learn.co</a>
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/rails-pollywog-ranch' title=''></a> on Learn.co and start learning to code for free.</p>
