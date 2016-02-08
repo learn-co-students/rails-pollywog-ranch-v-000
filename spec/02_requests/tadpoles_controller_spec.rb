@@ -1,3 +1,4 @@
+require 'rails_helper'
 describe TadpolesController, :type => :request  do
   before(:each) do
     @pond = Pond.create(:name => "Walden", :water_type => "alkaline")
