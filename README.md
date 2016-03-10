@@ -44,8 +44,10 @@ After speaking with Darryl, he has informed us that he has several ponds on his 
 
 ## Resources
 * [Stack Overflow](http://stackoverflow.com/) - [Delegation](http://stackoverflow.com/a/11457714)
-* [Pivotal Labs](http://pivotallabs.com/) - [Delgation](http://pivotallabs.com/rails-delegates-are-even-more-useful-than-i-knew/)
+* [Pivotal Labs](https://blog.pivotal.io/tag/rails/) - [Delgation](https://blog.pivotal.io/labs/labs/rails-delegates-are-even-more-useful-than-i-knew/)
 * [Tutorials Point: Ruby on Rails](http://www.tutorialspoint.com/ruby-on-rails/) - [Ruby on Rails Directory Structure](http://www.tutorialspoint.com/ruby-on-rails/rails-directory-structure.htm)
 * [Rails Guides on Routing](http://guides.rubyonrails.org/routing.html) - [Nested Resources](http://guides.rubyonrails.org/routing.html#nested-resources)
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/rails-pollywog-ranch' title=''></a> on Learn.co and start learning to code for free.</p>
+
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/rails-pollywog-ranch'>Rails Pollywog Ranch Lab</a> on Learn.co and start learning to code for free.</p>
