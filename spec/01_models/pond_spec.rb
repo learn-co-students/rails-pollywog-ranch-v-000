@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe Pond do
   
-  it 'has a name and a color' do
+  it 'has a name and a water_type' do
     expect { Pond.create(:name => "Walden", :water_type => "alkaline") }.to_not raise_error
     lake = Pond.create(:name => "Hanging Lake", :water_type => "clear")
     expect(lake.name).to eq('Hanging Lake')
