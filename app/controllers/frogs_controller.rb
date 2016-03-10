@@ -21,7 +21,7 @@ class FrogsController < ApplicationController
 
     respond_to do |format|
       if @frog.save
-        format.html { redirect_to @frog, notice: 'Frog was successfully created.' }
+        format.html { redirect_to @frog, notice: "#{@frog.name} the Frog was successfully created." }
       else
         format.html { render :new }
       end
