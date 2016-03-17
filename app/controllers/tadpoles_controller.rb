@@ -8,6 +8,7 @@ class TadpolesController < ApplicationController
   end
 
   def show
+    @tadpole = Tadpole.find_by(params[:id])
   end
 
   def new
@@ -30,6 +31,7 @@ class TadpolesController < ApplicationController
     end
   end
 
+
   def update
     respond_to do |format|
       if @tadpole.update(tadpole_params)
@@ -38,6 +40,13 @@ class TadpolesController < ApplicationController
         format.html { render :edit }
       end
     end
+  end
+
+  def metamorphosize
+    tadpole = Tadpole.find_by(id: params[:id])
+    @frog = Frog.create(name: tadpole.name, color: tadpole.color, pond: tadpole.pond)
+    tadpole.destroy
+    redirect_to frog_path(@frog)
   end
 
   def destroy
