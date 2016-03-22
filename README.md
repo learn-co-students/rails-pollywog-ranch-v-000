@@ -20,7 +20,7 @@ After speaking with Darryl, he has informed us that he has several ponds on his 
 * Once the associations are passing, you'll be modifying three files:
   
   1. app/controllers/tadpoles_controller.rb
-    * You'll add an action, `#metamorphoize`, to this controller
+    * You'll add an action, `#metamorphosize`, to this controller
   2. config/routes.rb 
     * Here you'll allow a form to post to /tadpoles/:id/metamorphosize
     * This should route the request to the Tadpoles Controller's metamorphoize action
@@ -49,3 +49,5 @@ After speaking with Darryl, he has informed us that he has several ponds on his 
 * [Rails Guides on Routing](http://guides.rubyonrails.org/routing.html) - [Nested Resources](http://guides.rubyonrails.org/routing.html#nested-resources)
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/rails-pollywog-ranch' title=''></a> on Learn.co and start learning to code for free.</p>
+
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/rails-pollywog-ranch'>Rails Pollywog Ranch Lab</a> on Learn.co and start learning to code for free.</p>
