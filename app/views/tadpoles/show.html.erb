@@ -2,7 +2,10 @@
   <h1><%= @tadpole.name %> the Tadpole</h1>
 
   <!-- make form to make "Become a frog" button here -->
+  <%= form_for @tadpole, url: "/tadpoles/#{@tadpole.id}/metamorphosize", method: 'post'  do |f| %>
   <!-- the form should post to /tadpoles/:id/metamorphosize -->
+      <%= f.submit "Become a frog" %>
+  <% end %>
 
   <p>Color: <%= @tadpole.color %></p>
   <p>Parent: <a href="/frogs/<%= @tadpole.frog.id %>"><%= @tadpole.frog.name %></a></p>
