@@ -46,6 +46,13 @@ class TadpolesController < ApplicationController
       format.html { redirect_to tadpoles_url, notice: 'Tadpole was successfully destroyed.' }
     end
   end
+  
+  def metamorphosize
+    set_tadpole
+    @frog = Frog.create(name: @tadpole.name, color: @tadpole.color,pond_id: @tadpole.frog.pond_id)
+    @tadpole.destroy
+    redirect_to frog_path(@frog)
+  end
 
   private
     def set_tadpole
