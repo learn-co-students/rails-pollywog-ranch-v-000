@@ -1,5 +1,7 @@
 <h1>Edit <%= @tadpole.name %> the Tadpole</h1>
 
-<%= render 'form' %>
+<%= form_for(@tadpole)  do |f| %>
+  <%= render 'form' %>
+<% end %>
 
 <a href="/tadpoles">Cancel</a>
