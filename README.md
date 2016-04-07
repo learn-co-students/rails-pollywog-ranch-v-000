@@ -1,4 +1,3 @@
-
 ![tadpoles and frogs](/app/assets/images/intro-image.jpeg)
 
 # Pollywog Ranch
@@ -7,21 +6,26 @@
 
 Help Frog Rancher Darryl categorize and track all the ponds, frogs, and tadpoles on his ranch. To do this you will create migrations and models complete with ActiveRecord associations.
 
-## Background 
+## Background
 
-After speaking with Darryl, he has informed us that he has several ponds on his ranch. Each pond has different frogs that live there. Some of those frogs have tadpole babies. The frogs all have the ability to have tadpoles at any given time and the tadpoles have the ability to metamorphosize into frogs at any time. 
+After speaking with Darryl, he has informed us that he has several ponds on his ranch. Each pond has different frogs that live there. Some of those frogs have tadpole babies. The frogs all have the ability to have tadpoles at any given time and the tadpoles have the ability to metamorphosize into frogs at any time.
+
+## Example
+
+Here's a [demo](http://the-pollywog-ranch.herokuapp.com) of what we're
+aiming for.
 
 ## Instructions
 
 #### Getting Started
 * Run `bundle install` then `rspec` to see what course to take. Keep in mind that for the association of tadpoles belonging to a pond through frog, you'll have to [delegate](http://stackoverflow.com/a/11457714).
-* Take a look at the tests in `spec/models` before writing your migrations. 
+* Take a look at the tests in `spec/models` before writing your migrations.
 * Once your migrations are done, start on the associations in your models.
 * Once the associations are passing, you'll be modifying three files:
-  
+
   1. app/controllers/tadpoles_controller.rb
     * You'll add an action, `#metamorphosize`, to this controller
-  2. config/routes.rb 
+  2. config/routes.rb
     * Here you'll allow a form to post to /tadpoles/:id/metamorphosize
     * This should route the request to the Tadpoles Controller's metamorphoize action
   3. views/tadpoles/show.html.erb
