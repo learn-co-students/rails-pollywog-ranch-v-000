@@ -1,0 +1,26 @@
+Frog
+  has a name and a color (FAILED - 1)
+  belongs to a pond (FAILED - 2)
+  has many tadpoles (FAILED - 3)
+
+Pond
+  has a name and a water_type (FAILED - 4)
+  has many frogs (FAILED - 5)
+  has many tadpoles through frogs (FAILED - 6)
+
+Tadpole
+  has a name and a color (FAILED - 7)
+  belongs to a frog (FAILED - 8)
+  belongs to a pond through a frog (FAILED - 9)
+
+TadpolesController
+  post tadpoles/:id/metamorphosize
+    makes a new frog with the tadpole's name, color, and pond (FAILED - 10)
+    deletes the tadpole from the datebase (FAILED - 11)
+    redirects to the newly made frog's show page (FAILED - 12)
+
+Metamorphosize
+  has a button called 'Become a frog' on the tadpole show page (FAILED - 13)
+  can click on the button and the tadpole becomes a frog (FAILED - 14)
+
+
