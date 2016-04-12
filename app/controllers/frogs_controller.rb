@@ -51,6 +51,8 @@ class FrogsController < ApplicationController
     end
 
     def frog_params
-      params.require(:frog).permit(:name, :color, :pond_id)
+      if params[:commit] != "Become a frog"
+        params.require(:frog).permit(:name, :color, :pond_id)
+      end
     end
 end
