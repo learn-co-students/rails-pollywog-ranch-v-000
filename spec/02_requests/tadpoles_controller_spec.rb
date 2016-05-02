@@ -1,4 +1,6 @@
-describe TadpolesController, :type => :request  do
+require 'rails_helper'
+
+RSpec.describe TadpolesController, :type => :request  do
   before(:each) do
     @pond = Pond.create(:name => "Walden", :water_type => "alkaline")
     @frog = Frog.create(:name => "Kermit", :color => "green",  :pond_id => @pond.id)

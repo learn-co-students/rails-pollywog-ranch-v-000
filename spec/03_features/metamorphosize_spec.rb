@@ -1,4 +1,6 @@
-describe "Metamorphosize" do
+require 'rails_helper'
+
+RSpec.describe "Metamorphosize" do
 
   before(:each) do
     @pond = Pond.create(:name => "Swan", :water_type => "alkaline")
