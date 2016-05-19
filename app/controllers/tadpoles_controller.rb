@@ -30,7 +30,7 @@ class TadpolesController < ApplicationController
     end
   end
   def metamorphosize
-    tadpole = Tadpole.find(params[:id])
+    tadpole = set_tadpole
     @frog = Frog.new(tadpole.attributes.slice("name", "color"))
     @frog.pond = tadpole.pond
     @frog.save
