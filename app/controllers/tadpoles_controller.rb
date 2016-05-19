@@ -31,9 +31,7 @@ class TadpolesController < ApplicationController
   end
   def metamorphosize
     tadpole = set_tadpole
-    @frog = Frog.new(tadpole.attributes.slice("name", "color"))
-    @frog.pond = tadpole.pond
-    @frog.save
+    @frog = tadpole.pond.frogs.create(tadpole.attributes.slice("name", "color"))
     tadpole.destroy
     redirect_to frog_path(@frog)
   end
