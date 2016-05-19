@@ -33,7 +33,7 @@ class TadpolesController < ApplicationController
     tadpole = set_tadpole
     @frog = tadpole.pond.frogs.create(tadpole.attributes.slice("name", "color"))
     tadpole.destroy
-    redirect_to frog_path(@frog)
+    redirect_to @frog
   end
 
   def update
