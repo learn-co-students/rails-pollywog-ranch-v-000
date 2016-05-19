@@ -10,8 +10,8 @@
 
   <a href="/tadpoles">Back</a> | 
   <a href="/tadpoles/<%= @tadpole.id %>/edit">Edit</a> | 
-  <a href="/tadpoles/<%= @tadpole.id %>/destroy">Delete</a>
-  <%= button_to "Become a frog", action: "metamorphosize"%>
+  <a href="/tadpoles/<%= @tadpole.id %>/destroy">Delete</a><br>
+  <%= button_to "Become a frog", {action: "metamorphosize"}, {class: "btn btn-primary"} %>
 </div>
 
 <div class="card">
