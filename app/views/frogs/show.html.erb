@@ -9,7 +9,7 @@
 
   <p><a href="/frogs/<%= @frog.id %>/tadpoles/new" class="btn btn-primary">Create new tadpole baby</a></p>
 
-  <p>Color: <%= @frog.color %></p>
+  <p>Color: <span style="color:<%=@frog.color%>;"><%= @frog.color %></span></p>
   <p>Lives: <a href="/ponds/<%= @frog.pond.id %>"><%= @frog.pond.name %></a></p>
   <% unless @frog.tadpoles.empty? %>
     <h2>Children</h2>
