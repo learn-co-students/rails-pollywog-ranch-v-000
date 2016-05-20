@@ -9,7 +9,7 @@
 
   <p><a href="/frogs/<%= @frog.id %>/tadpoles/new" class="btn btn-primary">Create new tadpole baby</a></p>
 
-  <p>Color: <span style="color:<%=@frog.color%>;"><%= @frog.color %></span></p>
+  <p>Color: <span class="color" style="color:<%=@frog.color%>;"><%= @frog.color %></span></p>
   <p>Lives: <a href="/ponds/<%= @frog.pond.id %>"><%= @frog.pond.name %></a></p>
   <% unless @frog.tadpoles.empty? %>
     <h2>Children</h2>
@@ -19,9 +19,12 @@
       <% end %>
     </ol><br>
   <% end %>
-  <a href="/frogs">Back</a> | 
-  <a href="/frogs/<%= @frog.id %>/edit">Edit</a> | 
-  <a href="/frogs/<%= @frog.id %>/destroy">Delete</a>
+  <div class="actions">
+    <%= link_to "Back", {action: "index"}, {class: "btn btn-primary"} %>
+    <%= link_to "Edit", {action: "edit"}, {class: "btn btn-primary"} %>
+    <%= link_to "Delete", {action: "destroy"}, {class: "btn btn-primary"} %>
+  </div>
+  
 </div>
 
 <div class="card">

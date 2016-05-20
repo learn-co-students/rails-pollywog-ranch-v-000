@@ -37,7 +37,7 @@ class TadpolesController < ApplicationController
      respond_to do |format|
       if @frog.save
       	tadpole.destroy
-        format.html { redirect_to @frog, notice: '#{@frog.name} is now a frog!' }
+        format.html { redirect_to @frog, notice: 'Your tadpole has metamorphosized!' }
       else
         format.html { render :new }
       end
