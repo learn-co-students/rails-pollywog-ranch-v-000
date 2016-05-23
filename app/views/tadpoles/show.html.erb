@@ -15,8 +15,7 @@
 
 <div class="card">
   <img src="http://<%= @tadpole.color %>-tadpole.jpg.to/" alt="Tadpole Picture" width="300">
-<!--  <%= form_tag("/tadpoles/#{@tadpole.id}/metamorphosize") do  %>
-  <%= submit_tag("Become a frog")%>
-  <% end %> -->
-  <button type="submit" name="commit"  id="Become a frog" action="/tadpoles/<%= @tadpole.id %>/metamorphosize" method='POST' >Become a Frog</button> -->
+  <%= form_tag("/tadpoles/#{@tadpole.id}/metamorphosize") do  %>
+    <%= submit_tag("Become a frog")%>
+  <% end %>
 </div>
