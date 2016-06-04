@@ -43,6 +43,7 @@ group :test, :development do
   gem "database_cleaner", '~> 1.5.1'
   gem "sqlite3", '~> 1.3.11'
   gem "pry", '~> 0.10.3'
+  gem 'pry-nav'
   gem "guard-rspec", require: false
   gem "thin", '~> 1.6.4'
   gem 'launchy', '~> 2.4.3'
