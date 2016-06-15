@@ -4,11 +4,15 @@ class TadpolesController < ApplicationController
   # add your metamorphosize action here
   def metamorphosize
     #makes a new frog with the tadpole's name, color, and pond
-    @frog = Frog.create(name: @tadpole.name, color: @tadpole.color, pond_id: @tadpole.pond.id)
+    @frog = Frog.new(name: @tadpole.name, color: @tadpole.color, pond_id: @tadpole.pond.id)
     #deletes the tadpole from the datebase
-    @tadpole.destroy
-    #redirects to the newly made frog's show page
-    redirect_to frog_path(@frog), notice: 'Tadpole successfully became a frog.'
+    if @frog.save
+      @tadpole.destroy
+      #redirects to the newly made frog's show page
+      redirect_to frog_path(@frog), notice: 'Tadpole successfully became a frog.'
+    else
+      redirect_to tadpole_path(@tadpole)
+    end  
   end
   
   def index
