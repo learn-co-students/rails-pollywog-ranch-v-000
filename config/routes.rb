@@ -21,4 +21,13 @@ Rails.application.routes.draw do
     resources :tadpoles, :only => [:new]
   end
 
+  # metamorphosize routes
+
+  resources :tadpoles do
+    post :metamorphosize, on: :member
+  end
+
+  #post '/tadpoles/:id/metamorphosize', to: 'tadpoles#metamorphosize'
+
+
 end
