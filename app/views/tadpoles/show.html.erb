@@ -1,11 +1,9 @@
 <div class="card">
   <h1><%= @tadpole.name %> the Tadpole</h1>
 
-  <%= form_for(@tadpole, url: "/tadpoles/#{@tadpole.id}/metamorphosize", method: "post") do |f| %>
+  <%= button_to "Become a frog", "/tadpoles/#{@tadpole.id}/metamorphosize", method: "post" %>
 
-  <%= f.submit("Become a frog") %>
-
-  <% end %>
+ 
 
 
   <p>Color: <%= @tadpole.color %></p>
