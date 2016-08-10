@@ -1,6 +1,8 @@
 <div class="card">
+
   <h1><%= @tadpole.name %> the Tadpole</h1>
 
+    <%= render partial: 'become_frog' %>
   <!-- make form to make "Become a frog" button here -->
   <!-- the form should post to /tadpoles/:id/metamorphosize -->
 
@@ -11,6 +13,7 @@
   <a href="/tadpoles">Back</a> | 
   <a href="/tadpoles/<%= @tadpole.id %>/edit">Edit</a> | 
   <a href="/tadpoles/<%= @tadpole.id %>/destroy">Delete</a>
+
 </div>
 
 <div class="card">
