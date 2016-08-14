@@ -1,3 +1,9 @@
+<% if flash[:notice] %>
+  <div class="notice">
+    <%= flash[:notice] %></p>
+  </div>
+<% end %>
+
 <div class="card">
   <h1><%= @pond.name %> Pond</h1>
   <p>water type: <%= @pond.water_type %></p>
@@ -13,8 +19,8 @@
       </li>
     <% end %>
   </ol>
-  <a href="/ponds">Back</a> | 
-  <a href="/ponds/<%= @pond.id %>/edit">Edit</a> | 
+  <a href="/ponds">Back</a> |
+  <a href="/ponds/<%= @pond.id %>/edit">Edit</a> |
   <a href="/ponds/<%= @pond.id %>/destroy">Delete</a>
 </div>
 
