@@ -1,9 +1,3 @@
-<% if flash[:notice] %>
-  <div class="notice">
-    <%= flash[:notice] %></p>
-  </div>
-<% end %>
-
 <div class="card">
   <h1><%= @frog.name %> the Frog</h1>
 
@@ -19,8 +13,8 @@
       <% end %>
     </ol><br>
   <% end %>
-  <a href="/frogs">Back</a> | 
-  <a href="/frogs/<%= @frog.id %>/edit">Edit</a> | 
+  <a href="/frogs">Back</a> |
+  <a href="/frogs/<%= @frog.id %>/edit">Edit</a> |
   <a href="/frogs/<%= @frog.id %>/destroy">Delete</a>
 </div>
 
