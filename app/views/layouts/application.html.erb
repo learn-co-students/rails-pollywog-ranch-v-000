@@ -30,6 +30,12 @@
   </div><!-- navbar -->
 
   <div class="container">
+    <% if flash[:notice] %>
+      <div class="notice">
+        <%= flash[:notice] %></p>
+      </div>
+    <% end %>
+
     <%= yield %>
   </div>
 
