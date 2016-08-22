@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140922151507) do
+ActiveRecord::Schema.define(version: 20160822155544) do
 
   create_table "frogs", force: :cascade do |t|
     t.string   "name"
     t.string   "color"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "pond_id"
   end
 
   create_table "ponds", force: :cascade do |t|
@@ -32,6 +33,7 @@ ActiveRecord::Schema.define(version: 20140922151507) do
     t.string   "color"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "frog_id"
   end
 
 end
