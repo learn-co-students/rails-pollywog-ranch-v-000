@@ -4,10 +4,17 @@ class TadpolesController < ApplicationController
   # add your metamorphosize action here
   def metamorphosize
     @frog = Frog.new(name: @tadpole.name, color: @tadpole.color, pond_id: @tadpole.pond.id)
-    @frog.save
-    @tadpole.destroy
-    redirect_to frog_path(@frog)
+    respond_to do |format|
+      if @frog.save
+        @tadpole.destroy
+        format.html { redirect_to frog_path(@frog), notice: "#{@frog.name} the Tadpole successfully became a frog." }
+      else
+        format.html { render "/tadpoles/#{@tadpole.id}" }
+      end
+    end
   end
+
+  #=> How does `respond_to` work? http://api.rubyonrails.org/classes/ActionController/MimeResponds.html#method-i-respond_to
 
   def index
     @tadpoles = Tadpole.all
