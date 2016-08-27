@@ -9,7 +9,7 @@ describe Frog do
     expect(trevor.color).to eq('brown')
   end
 
-  it 'belongs to a pond' do 
+  it 'belongs to a pond' do
     walden = Pond.create(:name => "Walden", :water_type => "alkaline")
     kermit = Frog.create(:name => "Kermit", :color => "green", :pond_id => walden.id)
 
@@ -20,7 +20,7 @@ describe Frog do
     expect(updated_kermit.pond).to eq(updated_walden)
   end
 
-  it 'has many tadpoles' do 
+  it 'has many tadpoles' do
     kermit = Frog.create(:name => "Kermit", :color => "green")
     tad = Tadpole.create(:name => "Tad", :color => "green", :frog_id => kermit.id)
     polly = Tadpole.create(:name => "Polly", :color => "green", :frog_id => kermit.id)
