@@ -1,4 +1,4 @@
-describe "Metamorphosize" do
+describe "Metamorphose" do
 
   before(:each) do
     @pond = Pond.create(:name => "Swan", :water_type => "alkaline")
@@ -32,5 +32,4 @@ describe "Metamorphosize" do
     # displays the frog's pond's name
     expect(page).to have_content("#{@tadpole.pond.name}")
   end
-
 end
