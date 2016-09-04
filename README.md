@@ -23,12 +23,12 @@ Here's a [demo](http://the-pollywog-ranch.herokuapp.com) of what we're aiming fo
 * Once the associations are passing, you'll be modifying three files:
 
   1. `app/controllers/tadpoles_controller.rb`
-    * You'll add an action, `#metamorphosize`, to this controller
+    * You'll add an action, `#metamorphose`, to this controller
   2. `config/routes.rb`
-    * Here you'll allow a form to post to `/tadpoles/:id/metamorphosize`
-    * This should route the request to the `TadpolesController`'s `#metamorphosize` action
+    * Here you'll allow a form to post to `/tadpoles/:id/metamorphose`
+    * This should route the request to the `TadpolesController`'s `#metamorphose` action
   3. `views/tadpoles/show.html.erb`
-    * You'll add a form that will post to `/tadpoles/:id/metamorphosize` with a submit button that reads "Become a frog"
+    * You'll add a form that will post to `/tadpoles/:id/metamorphose` with a submit button that reads "Become a frog"
 
 * If you get stuck refer to the [Rails Active Record documentation](http://guides.rubyonrails.org/active_record_basics.html).
 * You can refer to [this link](http://www.tutorialspoint.com/ruby-on-rails/rails-directory-structure.htm) as a quick reference for the Rails 4 folder structure.
