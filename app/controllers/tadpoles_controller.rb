@@ -2,7 +2,11 @@ class TadpolesController < ApplicationController
   before_action :set_tadpole, only: [:show, :edit, :update, :destroy, :metamorphosize]
 
   # add your metamorphosize action here
-  
+  def metamorphosize
+    tadpole = Tadpole.find_or_create_by(params[:name])
+    @frog = Frog.create(name: tadpole.name, color: tadpole.color, pond_id: tadpole.pond.id)
+  end
+
   def index
     @tadpoles = Tadpole.all
   end
