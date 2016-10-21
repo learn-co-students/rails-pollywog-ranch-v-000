@@ -2,8 +2,9 @@
 <% @tadpoles.each do |tadpole| %>
   <div class="card">
     <a href="/tadpoles/<%= tadpole.id %>">
-      <img src="http://<%= tadpole.color %>-tadpole.jpg.to/" alt="Tadpole Picture" height="115" width="175">
+      <img src="/app/assets/images/intro-image.jpeg" alt="Tadpole Picture" height="115" width="175">
     </a>
     <p><a href="/tadpoles/<%= tadpole.id %>"><%= tadpole.name %></a></p>
   </div>
+  <%= link_to "Create a Tadpole", new_frog_tadpole_path(tadpole, tadpole.frog) %>
 <% end %>
