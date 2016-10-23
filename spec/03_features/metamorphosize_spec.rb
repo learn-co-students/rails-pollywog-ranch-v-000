@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 describe "Metamorphosize" do
 
   before(:each) do
