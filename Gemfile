@@ -33,12 +33,12 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 group :test, :development do
   gem "rspec-rails", '~> 3.3.3'
-  gem "capybara", '~> 2.5.0'
+  gem "capybara", '~> 2.10.0'
   gem "selenium-webdriver", '~> 2.48.1'
   gem "better_errors", '~> 2.1.1'
   gem "sprockets_better_errors", '~> 0.0.4'
   gem "binding_of_caller", '~> 0.7.2'
-  gem "factory_girl_rails", '~> 4.5.0'
+  gem "factory_girl_rails", '~> 4.7.0'
   gem "simplecov", '~> 0.10.0'
   gem "database_cleaner", '~> 1.5.1'
   gem "sqlite3", '~> 1.3.11'
@@ -49,7 +49,7 @@ group :test, :development do
 end
 
 group :production do
-  gem "pg"
+  # gem "pg"
   gem "google-analytics-rails"
   gem "rails_12factor"
 end
