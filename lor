@@ -1,0 +1,159 @@
+
+Frog
+[32m  has a name and a color[0m
+[31m  belongs to a pond (FAILED - 1)[0m
+[32m  has many tadpoles[0m
+
+Pond
+[32m  has a name and a water_type[0m
+[32m  has many frogs[0m
+[32m  has many tadpoles through frogs[0m
+
+Tadpole
+[32m  has a name and a color[0m
+[32m  belongs to a frog[0m
+[31m  belongs to a pond through a frog (FAILED - 2)[0m
+
+TadpolesController
+  post tadpoles/:id/metamorphosize
+[31m    makes a new frog with the tadpole's name, color, and pond (FAILED - 3)[0m
+[31m    deletes the tadpole from the datebase (FAILED - 4)[0m
+[31m    redirects to the newly made frog's show page (FAILED - 5)[0m
+
+Metamorphosize
+[31m  has a button called 'Become a frog' on the tadpole show page (FAILED - 6)[0m
+[31m  can click on the button and the tadpole becomes a frog (FAILED - 7)[0m
+
+Failures:
+
+  1) Frog belongs to a pond
+     [31mFailure/Error: expect(updated_kermit.pond).to eq(updated_walden)[0m
+     [31mNoMethodError:[0m
+     [31m  undefined method `pond' for #<Frog:0x007fb1116f0990>[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/activemodel-4.2.0/lib/active_model/attribute_methods.rb:433:in `method_missing'[0m
+     [36m# ./spec/01_models/frog_spec.rb:20:in `block (2 levels) in <top (required)>'[0m
+
+  2) Tadpole belongs to a pond through a frog
+     [31mFailure/Error: expect(tad.pond).to eq(updated_walden)[0m
+     [31mNoMethodError:[0m
+     [31m  undefined method `pond' for #<Tadpole:0x007fb1124d4ef8>[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/activemodel-4.2.0/lib/active_model/attribute_methods.rb:433:in `method_missing'[0m
+     [36m# ./spec/01_models/tadpole_spec.rb:29:in `block (2 levels) in <top (required)>'[0m
+
+  3) TadpolesController post tadpoles/:id/metamorphosize makes a new frog with the tadpole's name, color, and pond
+     [31mFailure/Error: post "/tadpoles/#{@tadpole.id}/metamorphosize"[0m
+     [31mActionController::RoutingError:[0m
+     [31m  No route matches [POST] "/tadpoles/1/metamorphosize"[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.0/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.0/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/railties-4.2.0/lib/rails/rack/logger.rb:38:in `call_app'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/railties-4.2.0/lib/rails/rack/logger.rb:20:in `block in call'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.0/lib/active_support/tagged_logging.rb:68:in `block in tagged'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.0/lib/active_support/tagged_logging.rb:26:in `tagged'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.0/lib/active_support/tagged_logging.rb:68:in `tagged'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/railties-4.2.0/lib/rails/rack/logger.rb:20:in `call'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.0/lib/action_dispatch/middleware/request_id.rb:21:in `call'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/rack-1.6.4/lib/rack/methodoverride.rb:22:in `call'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/rack-1.6.4/lib/rack/runtime.rb:18:in `call'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.0/lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/rack-1.6.4/lib/rack/lock.rb:17:in `call'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.0/lib/action_dispatch/middleware/static.rb:113:in `call'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/rack-1.6.4/lib/rack/sendfile.rb:113:in `call'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/railties-4.2.0/lib/rails/engine.rb:518:in `call'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/railties-4.2.0/lib/rails/application.rb:164:in `call'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/rack-test-0.6.3/lib/rack/mock_session.rb:30:in `request'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/rack-test-0.6.3/lib/rack/test.rb:244:in `process_request'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/rack-test-0.6.3/lib/rack/test.rb:124:in `request'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.0/lib/action_dispatch/testing/integration.rb:297:in `process'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.0/lib/action_dispatch/testing/integration.rb:38:in `post'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.0/lib/action_dispatch/testing/integration.rb:344:in `block (2 levels) in <module:Runner>'[0m
+     [36m# ./spec/02_requests/tadpoles_controller_spec.rb:10:in `block (3 levels) in <top (required)>'[0m
+
+  4) TadpolesController post tadpoles/:id/metamorphosize deletes the tadpole from the datebase
+     [31mFailure/Error: post "/tadpoles/#{@tadpole.id}/metamorphosize"[0m
+     [31mActionController::RoutingError:[0m
+     [31m  No route matches [POST] "/tadpoles/1/metamorphosize"[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.0/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.0/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/railties-4.2.0/lib/rails/rack/logger.rb:38:in `call_app'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/railties-4.2.0/lib/rails/rack/logger.rb:20:in `block in call'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.0/lib/active_support/tagged_logging.rb:68:in `block in tagged'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.0/lib/active_support/tagged_logging.rb:26:in `tagged'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.0/lib/active_support/tagged_logging.rb:68:in `tagged'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/railties-4.2.0/lib/rails/rack/logger.rb:20:in `call'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.0/lib/action_dispatch/middleware/request_id.rb:21:in `call'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/rack-1.6.4/lib/rack/methodoverride.rb:22:in `call'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/rack-1.6.4/lib/rack/runtime.rb:18:in `call'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.0/lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/rack-1.6.4/lib/rack/lock.rb:17:in `call'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.0/lib/action_dispatch/middleware/static.rb:113:in `call'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/rack-1.6.4/lib/rack/sendfile.rb:113:in `call'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/railties-4.2.0/lib/rails/engine.rb:518:in `call'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/railties-4.2.0/lib/rails/application.rb:164:in `call'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/rack-test-0.6.3/lib/rack/mock_session.rb:30:in `request'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/rack-test-0.6.3/lib/rack/test.rb:244:in `process_request'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/rack-test-0.6.3/lib/rack/test.rb:124:in `request'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.0/lib/action_dispatch/testing/integration.rb:297:in `process'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.0/lib/action_dispatch/testing/integration.rb:38:in `post'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.0/lib/action_dispatch/testing/integration.rb:344:in `block (2 levels) in <module:Runner>'[0m
+     [36m# ./spec/02_requests/tadpoles_controller_spec.rb:20:in `block (3 levels) in <top (required)>'[0m
+
+  5) TadpolesController post tadpoles/:id/metamorphosize redirects to the newly made frog's show page
+     [31mFailure/Error: post "/tadpoles/#{@tadpole.id}/metamorphosize"[0m
+     [31mActionController::RoutingError:[0m
+     [31m  No route matches [POST] "/tadpoles/1/metamorphosize"[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.0/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.0/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/railties-4.2.0/lib/rails/rack/logger.rb:38:in `call_app'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/railties-4.2.0/lib/rails/rack/logger.rb:20:in `block in call'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.0/lib/active_support/tagged_logging.rb:68:in `block in tagged'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.0/lib/active_support/tagged_logging.rb:26:in `tagged'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.0/lib/active_support/tagged_logging.rb:68:in `tagged'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/railties-4.2.0/lib/rails/rack/logger.rb:20:in `call'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.0/lib/action_dispatch/middleware/request_id.rb:21:in `call'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/rack-1.6.4/lib/rack/methodoverride.rb:22:in `call'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/rack-1.6.4/lib/rack/runtime.rb:18:in `call'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.0/lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/rack-1.6.4/lib/rack/lock.rb:17:in `call'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.0/lib/action_dispatch/middleware/static.rb:113:in `call'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/rack-1.6.4/lib/rack/sendfile.rb:113:in `call'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/railties-4.2.0/lib/rails/engine.rb:518:in `call'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/railties-4.2.0/lib/rails/application.rb:164:in `call'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/rack-test-0.6.3/lib/rack/mock_session.rb:30:in `request'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/rack-test-0.6.3/lib/rack/test.rb:244:in `process_request'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/rack-test-0.6.3/lib/rack/test.rb:124:in `request'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.0/lib/action_dispatch/testing/integration.rb:297:in `process'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.0/lib/action_dispatch/testing/integration.rb:38:in `post'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.0/lib/action_dispatch/testing/integration.rb:344:in `block (2 levels) in <module:Runner>'[0m
+     [36m# ./spec/02_requests/tadpoles_controller_spec.rb:29:in `block (3 levels) in <top (required)>'[0m
+
+  6) Metamorphosize has a button called 'Become a frog' on the tadpole show page
+     [31mFailure/Error: expect(page).to have_button('Become a frog')[0m
+     [31m  expected #has_button?("Become a frog") to return true, got false[0m
+     [36m# ./spec/03_features/metamorphosize_spec.rb:11:in `block (2 levels) in <top (required)>'[0m
+
+  7) Metamorphosize can click on the button and the tadpole becomes a frog
+     [31mFailure/Error: click_button('Become a frog')[0m
+     [31mCapybara::ElementNotFound:[0m
+     [31m  Unable to find button "Become a frog"[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/capybara-2.5.0/lib/capybara/node/finders.rb:43:in `block in find'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/capybara-2.5.0/lib/capybara/node/base.rb:84:in `synchronize'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/capybara-2.5.0/lib/capybara/node/finders.rb:32:in `find'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/capybara-2.5.0/lib/capybara/node/actions.rb:39:in `click_button'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/capybara-2.5.0/lib/capybara/session.rb:698:in `block (2 levels) in <class:Session>'[0m
+     [36m# /Users/BradSmith/.rvm/gems/ruby-2.2.3/gems/capybara-2.5.0/lib/capybara/dsl.rb:51:in `block (2 levels) in <module:DSL>'[0m
+     [36m# ./spec/03_features/metamorphosize_spec.rb:15:in `block (2 levels) in <top (required)>'[0m
+
+Finished in 0.35783 seconds (files took 3.78 seconds to load)
+[31m14 examples, 7 failures[0m
+
+Failed examples:
+
+[31mrspec ./spec/01_models/frog_spec.rb:12[0m [36m# Frog belongs to a pond[0m
+[31mrspec ./spec/01_models/tadpole_spec.rb:22[0m [36m# Tadpole belongs to a pond through a frog[0m
+[31mrspec ./spec/02_requests/tadpoles_controller_spec.rb:9[0m [36m# TadpolesController post tadpoles/:id/metamorphosize makes a new frog with the tadpole's name, color, and pond[0m
+[31mrspec ./spec/02_requests/tadpoles_controller_spec.rb:19[0m [36m# TadpolesController post tadpoles/:id/metamorphosize deletes the tadpole from the datebase[0m
+[31mrspec ./spec/02_requests/tadpoles_controller_spec.rb:27[0m [36m# TadpolesController post tadpoles/:id/metamorphosize redirects to the newly made frog's show page[0m
+[31mrspec ./spec/03_features/metamorphosize_spec.rb:10[0m [36m# Metamorphosize has a button called 'Become a frog' on the tadpole show page[0m
+[31mrspec ./spec/03_features/metamorphosize_spec.rb:14[0m [36m# Metamorphosize can click on the button and the tadpole becomes a frog[0m
+
