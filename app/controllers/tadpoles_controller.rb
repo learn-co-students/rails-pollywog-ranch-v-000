@@ -10,7 +10,9 @@ class TadpolesController < ApplicationController
   def show
   end
 
+
   def metamorphosize
+    #raise params.inspect
     @tadpole = Tadpole.find_by(id: params[:id])
 
     @frog = Frog.create(name: @tadpole.name, color: @tadpole.color, pond_id: @tadpole.pond.id)

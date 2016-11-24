@@ -13,9 +13,17 @@
   <a href="/tadpoles/<%= @tadpole.id %>/destroy">Delete</a>
   <br><br>
 
+
+  # the below doesnt work 
   <%= form_for @tadpole, url: metamorphosize_path(@tadpole) do |f| %>
     <%= f.submit "Become a frog" %>
   <% end %>
+
+  <!-- <p>  # the answer
+    <%= form_tag("/tadpoles/#{@tadpole.id}/metamorphosize") do %>
+      <%= submit_tag "Become a frog", :class => 'btn btn-primary' %>
+    <% end %>
+  </p> -->
 
 </div>
 
