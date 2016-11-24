@@ -10,6 +10,19 @@ class TadpolesController < ApplicationController
   def show
   end
 
+  def metamorphosize
+    @tadpole = Tadpole.find_by(id: params[:id])
+
+    @frog = Frog.create(name: @tadpole.name, color: @tadpole.color, pond_id: @tadpole.pond.id)
+    
+    if @frog.save 
+      @tadpole.destroy
+      redirect_to frog_path(@frog), alert: "Tadpole is now a Frog!"
+    else
+      redirect_to tadpoles_route, alert: "Tadpole not found"
+    end
+  end
+
   def new
     @frog = Frog.find(set_frog)
     @tadpole = Tadpole.new
