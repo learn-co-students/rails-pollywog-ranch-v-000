@@ -3,21 +3,9 @@
 
   <!-- make form to make "Become a frog" button here -->
   <!-- the form should post to /tadpoles/:id/metamorphosize -->
-  <%= form_for(@tadpole) do |f| %>
+  <%= form_for @tadpole, url: metamorphosize_path(@tadpole), method: 'post' do |f| %>
 
-  <div class="field"> <%= f.label :name %><br>
-  <%= f.text_field :name %></div>
-
-  <div class="field"><%= f.label :color %><br>
-  <%= f.text_field :color %></div>
-
-  <div class="field">
-    <%#= f.hidden_field :frog_id, :value => @frog.id %>
-  </div>
-
-  <br>
-  
-  <div class="actions"><%= f.submit 'Become a frog' %></div>
+  <%= f.submit 'Become a frog' %>
 
 <% end %>
 
