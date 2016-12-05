@@ -1,8 +1,14 @@
 class TadpolesController < ApplicationController
   before_action :set_tadpole, only: [:show, :edit, :update, :destroy, :metamorphosize]
 
-  # add your metamorphosize action here
-  
+  def metamorphosize
+    tadpole = Tadpole.find_by(id: params[:id])
+    frog = Frog.new(:name => tadpole.name, :color => tadpole.color, :pond => tadpole.pond)
+    frog.save
+    tadpole.destroy
+    redirect_to frog_path(frog)
+  end
+
   def index
     @tadpoles = Tadpole.all
   end
@@ -57,6 +63,6 @@ class TadpolesController < ApplicationController
     end
 
     def tadpole_params
-      params.require(:tadpole).permit(:name, :color, :frog_id)
+      params.require(:tadpole).permit(:name, :color, :frog_id, :tadpole_id)
     end
 end
