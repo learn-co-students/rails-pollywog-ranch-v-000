@@ -1,12 +1,22 @@
-<div class="card">
+<div>
   <h1><%= @tadpole.name %> the Tadpole</h1>
+</div>
 
-  <!-- make form to make "Become a frog" button here -->
-  <!-- the form should post to /tadpoles/:id/metamorphosize -->
+<div>
+<%= form_for @tadpole, :url => {:action => "metamorphosize"}, method: "post" do |f| %>
+  <%= f.submit 'Become a frog' %>
+<% end %>
+</div>
 
+<div class="card">
   <p>Color: <%= @tadpole.color %></p>
   <p>Parent: <a href="/frogs/<%= @tadpole.frog.id %>"><%= @tadpole.frog.name %></a></p>
+
+<% if @tadpole.pond %>
+
   <p>Lives: <a href="/ponds/<%= @tadpole.pond.id %>"><%= @tadpole.pond.name %></a></p>
+
+<% end %>
 
   <a href="/tadpoles">Back</a> | 
   <a href="/tadpoles/<%= @tadpole.id %>/edit">Edit</a> | 
