@@ -2,6 +2,10 @@
   <h1><%= @tadpole.name %> the Tadpole</h1>
 
   <!-- make form to make "Become a frog" button here -->
+  <form action='/tadpoles/<%=@tadpole.id%>/metamorphosize' method='post'>
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+    <button type="submit">Become a frog</button>
+  </form>
   <!-- the form should post to /tadpoles/:id/metamorphosize -->
 
   <p>Color: <%= @tadpole.color %></p>
