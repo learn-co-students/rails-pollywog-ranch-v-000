@@ -47,6 +47,23 @@ class TadpolesController < ApplicationController
     end
   end
 
+  def metamorphosize
+    if Tadpole.exists?(params[:id])
+      @tadpole = Tadpole.find(params[:id])
+      @new_frog = Frog.create(name: @tadpole.name, color: @tadpole.color, pond: @tadpole.pond)
+      if @new_frog.save
+        @tadpole.destroy
+        redirect_to frog_path(@new_frog)
+      else
+        flash[:error] = "Something went wrong during metamorphosis"
+        redirect_to tadpole_path(@tadpole)
+      end
+    else
+      flash[:alert] = "Tadpole not found"
+      redirect_to tadpoles_path
+    end
+  end
+
   private
     def set_tadpole
       @tadpole = Tadpole.find(params[:id])
