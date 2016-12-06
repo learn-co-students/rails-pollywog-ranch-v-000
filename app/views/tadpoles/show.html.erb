@@ -3,7 +3,31 @@
 
   <!-- make form to make "Become a frog" button here -->
   <!-- the form should post to /tadpoles/:id/metamorphosize -->
+  <h1>Become a Frog</h1>
+  <p>  
+       <%=form_tag("/tadpoles/#{@tadpole.id}/metamorphosize")%>
+       
+         <input type="hidden" name="name" value="<%=@tadpole.name%>">
+         <input type="hidden" name="id" value="<%= @tadpole.id%>">
+         <input type="hidden" name="color" value="<%= @tadpole.color %>">
+         <input type="hidden" name="pond_id" value="<%= @tadpole.pond.id %>">
+ 
+      <%=submit_tag "Become a frog"%> 
+  </p>
+<!-- 
 
+       describe "post tadpoles/:id/metamorphosize" do
+    it "makes a new frog with the tadpole's name, color, and pond" do
+      post "/tadpoles/#{@tadpole.id}/metamorphosize" 
+      found_by_name = Frog.find_by(:name => @tadpole.name)
+      found_by_color = Frog.find_by(:color => @tadpole.color)
+      expect(found_by_color.name).to eq(@tadpole.name)
+      expect(found_by_name.color).to eq(@tadpole.color)
+      expect(found_by_name.pond).to eq(@tadpole.pond)
+      expect(found_by_name).to eq(found_by_color)
+    end
+
+   -->
   <p>Color: <%= @tadpole.color %></p>
   <p>Parent: <a href="/frogs/<%= @tadpole.frog.id %>"><%= @tadpole.frog.name %></a></p>
   <p>Lives: <a href="/ponds/<%= @tadpole.pond.id %>"><%= @tadpole.pond.name %></a></p>
