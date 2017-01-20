@@ -3,12 +3,12 @@
 
   <!-- make form to make "Become a frog" button here -->
   <%= form_for @tadpole, url: {action: "metamorphosize"}, html: {method: "post"} do |f| %>
-<!--    <div class="field"> <%= f.label :name %><br>
+    <div class="field"> <%= f.label :name %><br>
     <%= f.text_field :name %></div>
     <div class="field"><%= f.label :color %><br>
     <%= f.text_field :color %></div>
     </div>
-    <br> -->
+    <br>
     <div class="actions"><%= f.button value: 'Become a frog', id: "Become a frog", :class => 'btn btn-primary' %></div>
   <% end %>
   <!-- the form should post to /tadpoles/:id/metamorphosize -->
