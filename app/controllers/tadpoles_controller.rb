@@ -52,7 +52,6 @@ class TadpolesController < ApplicationController
     @frog = Frog.create(name: @tadpole.name, color: @tadpole.color, pond: @tadpole.pond)
     @tadpole.destroy
     redirect_to @frog
-    #binding.pry
   end
 
   private
