@@ -33,7 +33,6 @@ ActiveRecord::Schema.define(version: 20170119160702) do
     t.string   "color"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "pond_id"
     t.integer  "frog_id"
   end
 
