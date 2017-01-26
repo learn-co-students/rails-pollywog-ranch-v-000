@@ -3,6 +3,13 @@
 
   <!-- make form to make "Become a frog" button here -->
   <!-- the form should post to /tadpoles/:id/metamorphosize -->
+  <%= form_for @tadpole, 
+    method: 'post', 
+    url: metamorphosize_path(@tadpole) do |f| %>
+
+    <%= f.submit "Become a frog" %>
+
+  <% end %>
 
   <p>Color: <%= @tadpole.color %></p>
   <p>Parent: <a href="/frogs/<%= @tadpole.frog.id %>"><%= @tadpole.frog.name %></a></p>
