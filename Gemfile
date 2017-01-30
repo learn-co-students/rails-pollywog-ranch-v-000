@@ -32,7 +32,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # gem 'debugger', group: [:development, :test]
 
 group :test, :development do
-  gem "rspec-rails", '~> 3.3.3'
+  gem "rspec-rails", '~> 3.5'
   gem "capybara", '~> 2.5.0'
   gem "selenium-webdriver", '~> 2.48.1'
   gem "better_errors", '~> 2.1.1'
@@ -49,7 +49,7 @@ group :test, :development do
 end
 
 group :production do
-  gem "pg"
+  # gem "pg"
   gem "google-analytics-rails"
   gem "rails_12factor"
 end
