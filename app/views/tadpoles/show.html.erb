@@ -11,6 +11,10 @@
   <a href="/tadpoles">Back</a> | 
   <a href="/tadpoles/<%= @tadpole.id %>/edit">Edit</a> | 
   <a href="/tadpoles/<%= @tadpole.id %>/destroy">Delete</a>
+
+  <p>
+    <button class="btn btn-success"><%= link_to "Become a frog", metamorphosize_path(@tadpole), method: :post %></button>
+  </p>
 </div>
 
 <div class="card">
