@@ -1,3 +1,8 @@
 class Tadpole < ActiveRecord::Base
-  # code goes here
+  belongs_to :frog
+  delegate :pond, to: :frog
+
+  def metamorphose
+    frog = Frog.create_from_tadpole(self.destroy)
+  end
 end
