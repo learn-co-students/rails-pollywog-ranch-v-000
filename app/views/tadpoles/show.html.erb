@@ -2,14 +2,21 @@
   <h1><%= @tadpole.name %> the Tadpole</h1>
 
   <!-- make form to make "Become a frog" button here -->
+  <%= form_tag "#{@tadpole.id}/metamorphosize" do %>
+        <%= hidden_field_tag "tadpole[name]", @tadpole.name %>
+        <%= hidden_field_tag "tadpole[color]", @tadpole.color %>
+        <%= hidden_field_tag "tadpole[frog_id]", @tadpole.frog.id %>
+        <%= hidden_field_tag "tadpole[pond_id]", @tadpole.pond.id %>
+        <%= submit_tag "Become a frog" %>
+  <% end %>
   <!-- the form should post to /tadpoles/:id/metamorphosize -->
 
   <p>Color: <%= @tadpole.color %></p>
   <p>Parent: <a href="/frogs/<%= @tadpole.frog.id %>"><%= @tadpole.frog.name %></a></p>
   <p>Lives: <a href="/ponds/<%= @tadpole.pond.id %>"><%= @tadpole.pond.name %></a></p>
 
-  <a href="/tadpoles">Back</a> | 
-  <a href="/tadpoles/<%= @tadpole.id %>/edit">Edit</a> | 
+  <a href="/tadpoles">Back</a> |
+  <a href="/tadpoles/<%= @tadpole.id %>/edit">Edit</a> |
   <a href="/tadpoles/<%= @tadpole.id %>/destroy">Delete</a>
 </div>
 
