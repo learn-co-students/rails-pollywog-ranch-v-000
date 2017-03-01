@@ -17,9 +17,14 @@
   <img src="http://<%= @tadpole.color %>-tadpole.jpg.to/" alt="Tadpole Picture" width="300">
 </div>
 
-<form action="/tadpoles/<%= @tadpole.id %>/metamorphosize" method=POST>
+<!-- <form action="/tadpoles/<%= @tadpole.id %>/metamorphosize" method=POST>
 <input type="hidden" name="tadpole[name]" value="<%= @tadpole.name %>"><br>
 <input type="hidden" name="tadpole[color]" value="<%= @tadpole.color %>"><br>
 <input type="hidden" name="tadpole[pond_name]" value="<%= @tadpole.pond.name %>"><br>
 <input type="submit" value="Become a frog">
 </form>
+ -->
+
+<%= form_for @tadpole, :url => metamorphosize_path(@tadpole), :method => :post do |f| %>
+  <%= f.submit "Become a frog" %>
+<% end %>
