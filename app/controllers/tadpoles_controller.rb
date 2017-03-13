@@ -9,6 +9,19 @@ class TadpolesController < ApplicationController
     redirect_to frog_path(@frog)
   end
 
+  #from solution
+  # def metamorphosize
+  #   @frog = Frog.new(:color => @tadpole.color, :name => @tadpole.name, :pond_id => @tadpole.pond.id)
+  #   respond_to do |format|
+  #     if @frog.save
+  #       @tadpole.destroy
+  #       format.html { redirect_to @frog, notice: "#{@frog.name} the Tadpole successfully become a frog." }
+  #     else
+  #       format.html { render "/tadpoles/#{@tadpole.id}" }
+  #     end
+  #   end
+  # end
+
   def index
     @tadpoles = Tadpole.all
   end
