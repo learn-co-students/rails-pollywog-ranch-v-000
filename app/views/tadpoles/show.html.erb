@@ -16,3 +16,5 @@
 <div class="card">
   <img src="http://<%= @tadpole.color %>-tadpole.jpg.to/" alt="Tadpole Picture" width="300">
 </div>
+
+<%= button_to "Become a frog", action="/tadpoles/#{@tadpole.id}/metamorphosize" %>
