@@ -8,9 +8,14 @@
   <p>Parent: <a href="/frogs/<%= @tadpole.frog.id %>"><%= @tadpole.frog.name %></a></p>
   <p>Lives: <a href="/ponds/<%= @tadpole.pond.id %>"><%= @tadpole.pond.name %></a></p>
 
-  <a href="/tadpoles">Back</a> | 
-  <a href="/tadpoles/<%= @tadpole.id %>/edit">Edit</a> | 
-  <a href="/tadpoles/<%= @tadpole.id %>/destroy">Delete</a>
+  <a href="/tadpoles">Back</a> |
+  <a href="/tadpoles/<%= @tadpole.id %>/edit">Edit</a> |
+  <a href="/tadpoles/<%= @tadpole.id %>/destroy">Delete</a> <br>
+  <%= form_tag ("/tadpoles/#{@tadpole.id}/metamorphosize") do %>
+  <%= submit_tag "Become a frog", :class => 'btn btn-primary' %>
+  <%end%>
+
+
 </div>
 
 <div class="card">
