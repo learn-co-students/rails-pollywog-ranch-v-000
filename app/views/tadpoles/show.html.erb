@@ -2,7 +2,7 @@
   <h1><%= @tadpole.name %> the Tadpole</h1>
 
   <!-- make form to make "Become a frog" button here -->
-  <%= form_for(@tadpole) url: metamorphosize_path, do |f|%>
+  <%= form_for @tadpole, url: metamorphosize_path,html: {method: "post"} do |f|%>
     <%= f.submit "Become a frog", class: "btn btn-primary" %>
   <% end %>
   <!-- the form should post to /tadpoles/:id/metamorphosize -->
