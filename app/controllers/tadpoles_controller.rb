@@ -9,7 +9,7 @@ class TadpolesController < ApplicationController
       set_tadpole.destroy
       redirect_to @frog
     else
-      redirect_to tadpole
+      redirect_to set_tadpole
     end
   end
 
