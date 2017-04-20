@@ -17,6 +17,7 @@ class FrogsController < ApplicationController
   end
 
   def create
+
     @frog = Frog.new(frog_params)
 
     respond_to do |format|
