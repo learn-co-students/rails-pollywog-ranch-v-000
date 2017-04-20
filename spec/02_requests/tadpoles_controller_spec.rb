@@ -7,17 +7,21 @@ describe TadpolesController, :type => :request  do
 
   describe "post tadpoles/:id/metamorphosize" do
     it "makes a new frog with the tadpole's name, color, and pond" do
-      post "/tadpoles/#{@tadpole.id}/metamorphosize" 
+      post "/tadpoles/#{@tadpole.id}/metamorphosize"
+
       found_by_name = Frog.find_by(:name => @tadpole.name)
+
       found_by_color = Frog.find_by(:color => @tadpole.color)
+
       expect(found_by_color.name).to eq(@tadpole.name)
+    
       expect(found_by_name.color).to eq(@tadpole.color)
       expect(found_by_name.pond).to eq(@tadpole.pond)
       expect(found_by_name).to eq(found_by_color)
     end
 
     it "deletes the tadpole from the datebase" do
-      post "/tadpoles/#{@tadpole.id}/metamorphosize" 
+      post "/tadpoles/#{@tadpole.id}/metamorphosize"
       found_by_name = Tadpole.find_by(:name => @tadpole.name)
       found_by_color = Tadpole.find_by(:color => @tadpole.color)
       expect(found_by_color).to be_nil
