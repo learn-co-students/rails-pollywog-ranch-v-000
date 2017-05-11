@@ -3,11 +3,13 @@ class TadpolesController < ApplicationController
 
   def metamorphosize
     tadpole = Tadpole.find(params[:id])
-    frog = Frog.new(name: @tadpole.name, color: @tadpole.color)
-    frog.pond = @tadpole.pond
-    frog.save
-    tadpole.destroy
-    redirect_to frog_path(frog)
+    frog = Frog.create(name: @tadpole.name, color: @tadpole.color, pond: @tadpole.pond)
+    if frog
+      tadpole.destroy
+      redirect_to frog_path(frog)
+    else
+      redirect_to tadpole_path(tadpole)
+    end
   end
   
   def index
