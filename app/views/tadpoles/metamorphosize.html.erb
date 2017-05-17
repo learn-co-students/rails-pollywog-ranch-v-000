@@ -1,1 +1,14 @@
-Hello
+<h1>Metamorphosize</h1>
+
+<%= form_for @tadpole do |f| %>
+  <%= f.label :name, "Tadpole Name" %>
+  <%= f.select :name, options_from_collection_for_select(Tadpole.all, :id, :name), include_blank: true %><br>
+
+  <%= f.label :color, "Color" %>
+  <%= f.select :color, options_from_collection_for_select(Tadpole.all, :id, :color), include_blank: true %><br>
+
+  <%= f.label :pond, "Pond Name"%>
+  <%= f.select :pond, options_from_collection_for_select(Pond.all, :id, :name), include_blank: true %><br>
+
+  <%= f.submit %>
+<% end %>
