@@ -9,6 +9,9 @@
   <p>Lives: <a href="/ponds/<%= @tadpole.pond.id %>"><%= @tadpole.pond.name %></a></p>
 
   <a href="/tadpoles">Back</a> | 
+ <form action="/tadpoles/<%= @tadpole.id %>/metamorphosize">
+  <input type="submit" value="Become a frog" />
+ </form> 
   <a href="/tadpoles/<%= @tadpole.id %>/edit">Edit</a> | 
   <a href="/tadpoles/<%= @tadpole.id %>/destroy">Delete</a>
 </div>
