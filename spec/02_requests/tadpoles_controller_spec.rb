@@ -17,7 +17,7 @@ describe TadpolesController, :type => :request  do
     end
 
     it "deletes the tadpole from the datebase" do
-      post "/tadpoles/#{@tadpole.id}/metamorphosize" 
+      post "/tadpoles/#{@tadpole.id}/metamorphosize"
       found_by_name = Tadpole.find_by(:name => @tadpole.name)
       found_by_color = Tadpole.find_by(:color => @tadpole.color)
       expect(found_by_color).to be_nil
