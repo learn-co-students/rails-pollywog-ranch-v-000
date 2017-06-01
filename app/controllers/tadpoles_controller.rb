@@ -2,9 +2,13 @@ class TadpolesController < ApplicationController
   before_action :set_tadpole, only: [:show, :edit, :update, :destroy, :metamorphosize]
 
   def metamorphosize
-    @frog = Frog.create(name: @tadpole.name, color: @tadpole.color, pond_id: @tadpole.pond_id)
-    @tadpole.destroy
-    redirect_to frog_path(@frog)
+    @frog = Frog.new(name: @tadpole.name, color: @tadpole.color, pond_id: @tadpole.pond_id)
+    if @frog.save
+      @tadpole.destroy
+      redirect_to @frog, notice: "Your tadpole has become a frog!"
+    else
+      redirect_to @tadpole, alert: "Something went wrong! Your tadpole is still a tadpole."
+    end
   end
 
   def index
