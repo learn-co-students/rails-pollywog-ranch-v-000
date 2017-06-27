@@ -10,7 +10,7 @@ class TadpolesController < ApplicationController
     else
       render :show
     end
-  end  
+  end
 
   def index
     @tadpoles = Tadpole.all
