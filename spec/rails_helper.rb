@@ -31,4 +31,13 @@ RSpec.configure do |config|
   end
   config.use_transactional_fixtures = false
   config.infer_spec_type_from_file_location!
+
+  config.backtrace_exclusion_patterns = [
+    /\/lib\d*\/ruby\//,
+    /bin\//,
+    /gems/,
+    /spec\/spec_helper\.rb/,
+    /lib\/rspec\/(core|expectations|matchers|mocks)/
+  ]
+  
 end
