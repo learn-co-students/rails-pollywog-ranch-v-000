@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get '/frogs/:id/destroy', to: 'frogs#destroy'
   get '/tadpoles/:id/destroy', to: 'tadpoles#destroy'
   
-  # code your post to  '/tadpoles/:id/metamorphosize' here
+  post '/tadpoles/:id/metamorphosize', to: 'tadpoles#metamorphosize'
   # it should direct to the tadpoles controller, the metamorphosize action
 
   # resources
