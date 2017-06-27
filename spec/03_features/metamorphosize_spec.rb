@@ -1,5 +1,4 @@
-describe "Metamorphosize" do
-
+describe "Metamorphose" do
   before(:each) do
     @pond = Pond.create(:name => "Swan", :water_type => "alkaline")
     @frog = Frog.create(:name => "Ribbit", :color => "green",  :pond_id => @pond.id)
@@ -25,12 +24,11 @@ describe "Metamorphosize" do
     # redirects to the newly made frog's show page
     expect(current_url).to eq("http://www.example.com/frogs/#{frog.id}")
     
-    # displays the frog color
-    expect(page).to have_content("#{@tadpole.color}")
-    # displays the frog name
-    expect(page).to have_content("#{@tadpole.name}")
+    # displays the frog's color
+    expect(page).to have_content(@tadpole.color)
+    # displays the frog's name
+    expect(page).to have_content(@tadpole.name)
     # displays the frog's pond's name
-    expect(page).to have_content("#{@tadpole.pond.name}")
+    expect(page).to have_content(@tadpole.pond.name)
   end
-
 end
