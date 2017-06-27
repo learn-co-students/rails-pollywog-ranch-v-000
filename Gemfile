@@ -55,3 +55,4 @@ group :production do
 end
 
 gem "bootstrap-sass", "~> 3.1.1"
+gem "rails-erd", "~> 1.4.7"
