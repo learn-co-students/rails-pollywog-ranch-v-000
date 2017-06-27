@@ -21,4 +21,5 @@ Rails.application.routes.draw do
     resources :tadpoles, :only => [:new]
   end
 
+  post '/tadpoles/:id/metamorphosize', to: 'tadpoles#metamorphosize'
 end
