@@ -40,6 +40,12 @@ class TadpolesController < ApplicationController
     end
   end
 
+  def metamorphosize
+    @tadpole = Tadpole.find(params[:id])
+    @frog = @tadpole.metamorphosize
+    redirect_to frog_path(@frog)
+  end
+  
   def destroy
     @tadpole.destroy
     respond_to do |format|
