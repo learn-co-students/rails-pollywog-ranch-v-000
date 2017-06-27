@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   # it should direct to the tadpoles controller, the metamorphosize action
 
   # resources
+
+  post '/tadpoles/:id/metamorphosize', to: 'tadpoles#metamorphosize'
   resources :ponds
 
   resources :tadpoles, :only => [:index, :show, :edit, :update, :destroy, :metamorphosize, :create]
