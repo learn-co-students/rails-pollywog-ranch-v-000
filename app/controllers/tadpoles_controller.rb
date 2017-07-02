@@ -8,6 +8,10 @@ class TadpolesController < ApplicationController
   end
 
   def show
+    @tadpole = Tadpole.find(params[:id])
+    
+
+
   end
 
   def new
@@ -46,6 +50,23 @@ class TadpolesController < ApplicationController
       format.html { redirect_to tadpoles_url, notice: 'Tadpole was successfully destroyed.' }
     end
   end
+
+  def metamorphosize
+
+    tadpole = Tadpole.find(params[:id])
+    frog = Frog.find(tadpole.frog_id)
+    pond = Pond.find(frog.pond_id)
+
+    new_frog = Frog.create(:name => tadpole.name, :color => tadpole.color, :pond => pond)
+
+    tadpole.destroy
+
+    redirect_to frog_path(new_frog.id)
+
+
+  end
+
+
 
   private
     def set_tadpole

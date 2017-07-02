@@ -1,3 +1,4 @@
+Tadpole.destroy_all
 Pond.create([
   {:name => "Walden", :water_type => "alkaline"},
   {:name => "Swan", :water_type => "acidic"},
