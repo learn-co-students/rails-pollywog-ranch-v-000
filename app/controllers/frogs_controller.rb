@@ -7,6 +7,7 @@ class FrogsController < ApplicationController
   end
 
   def show
+    # show the new frog
   end
 
   def new

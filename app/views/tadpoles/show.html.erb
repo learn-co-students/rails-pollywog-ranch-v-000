@@ -8,8 +8,15 @@
   <p>Parent: <a href="/frogs/<%= @tadpole.frog.id %>"><%= @tadpole.frog.name %></a></p>
   <p>Lives: <a href="/ponds/<%= @tadpole.pond.id %>"><%= @tadpole.pond.name %></a></p>
 
-  <a href="/tadpoles">Back</a> | 
-  <a href="/tadpoles/<%= @tadpole.id %>/edit">Edit</a> | 
+  <%= form_for @tadpole, url: { action: "metamorphosize" }, method: :post do |f| %>
+    <%= f.hidden_field :name %>
+    <%= f.hidden_field :color %>
+    <%= f.hidden_field :frog_id %>
+    <%= f.button "Become a frog" %>
+  <% end %>
+
+  <a href="/tadpoles">Back</a> |
+  <a href="/tadpoles/<%= @tadpole.id %>/edit">Edit</a> |
   <a href="/tadpoles/<%= @tadpole.id %>/destroy">Delete</a>
 </div>
 
