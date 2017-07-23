@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "Metamorphose" do
+describe "Metamorphosize" do
   before(:each) do
     @pond = Pond.create(:name => "Swan", :water_type => "alkaline")
     @frog = Frog.create(:name => "Ribbit", :color => "green",  :pond_id => @pond.id)
