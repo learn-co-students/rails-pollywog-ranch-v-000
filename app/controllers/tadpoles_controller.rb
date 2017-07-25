@@ -14,6 +14,7 @@ class TadpolesController < ApplicationController
   end
 
   def show
+
   end
 
   def new
@@ -29,7 +30,7 @@ class TadpolesController < ApplicationController
     @tadpole = Tadpole.new(tadpole_params)
     respond_to do |format|
       if @tadpole.save
-        format.html { redirect_to @tadpole, notice: 'Tadpole was successfully created.' }
+        format.html { redirect_to @tadpole, notice: "Tadpole was successfully created." }
       else
         format.html { render :new }
       end

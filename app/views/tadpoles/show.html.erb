@@ -1,5 +1,11 @@
+<% if flash[:notice] %>
+  <div class="notice">
+    <%= flash[:notice] %></p>
+  </div>
+<% end %>
+
 <h1><%= @tadpole.name %> the Tadpole</h1>
-<%= form_for @tadpole, :url => metamorphose_path(@tadpole) do |f| %>
+<%= form_for @tadpole, :url => metamorphose_path(@tadpole), :method => "POST" do |f| %>
   <div class="actions"><%= f.submit 'Become a frog', :class => 'btn btn-primary' %></div>
 <% end %>
 <!-- <p><a href="/tadpoles/<%= @tadpole.id %>/metamorphose" action="POST" class="btn btn-primary">Become a frog</a></p><br> -->
