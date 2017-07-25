@@ -1,17 +1,18 @@
-<div class="card">
-  <h1><%= @tadpole.name %> the Tadpole</h1>
+<h1><%= @tadpole.name %> the Tadpole</h1>
+<%= form_for @tadpole, :url => metamorphose_path(@tadpole) do |f| %>
+  <div class="actions"><%= f.submit 'Become a frog', :class => 'btn btn-primary' %></div>
+<% end %>
+<!-- <p><a href="/tadpoles/<%= @tadpole.id %>/metamorphose" action="POST" class="btn btn-primary">Become a frog</a></p><br> -->
+<!-- make form to make "Become a frog" button here -->
+<!-- the form should post to /tadpoles/:id/metamorphosize -->
 
-  <!-- make form to make "Become a frog" button here -->
-  <!-- the form should post to /tadpoles/:id/metamorphosize -->
+<p>Color: <%= @tadpole.color %></p>
+<p>Parent: <a href="/frogs/<%= @tadpole.frog.id %>"><%= @tadpole.frog.name %></a></p>
+<p>Lives: <a href="/ponds/<%= @tadpole.pond.id %>"><%= @tadpole.pond.name %></a></p>
 
-  <p>Color: <%= @tadpole.color %></p>
-  <p>Parent: <a href="/frogs/<%= @tadpole.frog.id %>"><%= @tadpole.frog.name %></a></p>
-  <p>Lives: <a href="/ponds/<%= @tadpole.pond.id %>"><%= @tadpole.pond.name %></a></p>
-
-  <a href="/tadpoles">Back</a> | 
-  <a href="/tadpoles/<%= @tadpole.id %>/edit">Edit</a> | 
-  <a href="/tadpoles/<%= @tadpole.id %>/destroy">Delete</a>
-</div>
+<a href="/tadpoles">Back</a> |
+<a href="/tadpoles/<%= @tadpole.id %>/edit">Edit</a> |
+<a href="/tadpoles/<%= @tadpole.id %>/destroy">Delete</a>
 
 <div class="card">
   <img src="http://<%= @tadpole.color %>-tadpole.jpg.to/" alt="Tadpole Picture" width="300">
