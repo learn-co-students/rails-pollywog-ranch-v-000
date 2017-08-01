@@ -46,8 +46,8 @@ Here's a [demo](http://the-pollywog-ranch.herokuapp.com) of what we're aiming fo
 * Think about how you would get a frog to have tadpole babies. Click on any frog, and make it have a baby. Did the app go about making baby tadpoles in the same way you would have? For more details about metamorphosing into a frog, see `config/routes.rb` and `views/frogs/show.html.erb`. You can learn more about nested resources below.
 
 ## Resources
-* [Stack Overflow](http://stackoverflow.com/) — [Delegation](http://stackoverflow.com/a/11457714)
-* [Pivotal Labs](https://blog.pivotal.io/tag/rails/) — [Delgation](https://blog.pivotal.io/labs/labs/rails-delegates-are-even-more-useful-than-i-knew/)
+* [Stack Overflow — Delegation](http://stackoverflow.com/a/11457714)
+* [Pivotal Labs — Delegation](https://content.pivotal.io/blog/rails-delegates-are-even-more-useful-than-i-knew)
 * [Tutorials Point: Ruby on Rails](http://www.tutorialspoint.com/ruby-on-rails/) — [Ruby on Rails Directory Structure](http://www.tutorialspoint.com/ruby-on-rails/rails-directory-structure.htm)
 * [Rails Guides on Routing](http://guides.rubyonrails.org/routing.html) — [Nested Resources](http://guides.rubyonrails.org/routing.html#nested-resources)
 
