@@ -1,5 +1,5 @@
 class CreateFrogs < ActiveRecord::Migration
-  def create_table :frogs do |t|
+  create_table :frogs do |t|
     t.string :name
     t.string :color
     t.belongs_to :pond
