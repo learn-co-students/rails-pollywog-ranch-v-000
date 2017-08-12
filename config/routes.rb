@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get '/tadpoles/:id/destroy', to: 'tadpoles#destroy'
 
 
-  post '/tadpoles/:id/metamorphose', to: 'tadpoles#metamorphose', as: 'metamorphose'
+  post '/tadpoles/:id/metamorphose', to: 'tadpoles#metamorphose'
   patch '/tadpoles/:id/metamorphose', to: 'tadpoles#metamorphose'
 
   # code your post to  '/tadpoles/:id/metamorphosize' here
