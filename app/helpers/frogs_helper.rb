@@ -1,0 +1,2 @@
+module FrogsHelper
+end
