@@ -3,10 +3,17 @@ class TadpolesController < ApplicationController
 
   # add your metamorphosize action here
   def metamorphose
+
     tp = Tadpole.find(params[:id])
-    frog = Frog.create(name: tp.name, color: tp.color, pond_id: tp.pond.id)
-    tp.destroy
-    redirect_to frog_path(frog)
+    frog = Frog.new(name: tp.name, color: tp.color, pond_id: tp.pond.id)
+
+    if frog.save
+
+      tp.destroy
+      redirect_to frog_path(frog), notice: "Lil' tadpole #{frog.name} is now a frog!"
+    else
+      render :show
+    end
   end
   
   def index
@@ -14,6 +21,7 @@ class TadpolesController < ApplicationController
   end
 
   def show
+
   end
 
   def new
