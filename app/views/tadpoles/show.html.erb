@@ -3,7 +3,10 @@
 
   <!-- make form to make "Become a frog" button here -->
   <!-- the form should post to /tadpoles/:id/metamorphosize -->
-  
+  <!-- So, I think I'm going to use form_tag with metamorphose_path-->
+  <%= form_tag metamorphose_path(@tadpole), method: 'post' do  %>
+    <%= submit_tag 'Become a frog' %>
+  <% end  %>
 
   <p>Color: <%= @tadpole.color %></p>
   <p>Parent: <a href="/frogs/<%= @tadpole.frog.id %>"><%= @tadpole.frog.name %></a></p>
