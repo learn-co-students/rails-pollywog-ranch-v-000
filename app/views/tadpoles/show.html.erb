@@ -2,7 +2,7 @@
   <h1><%= @tadpole.name %> the Tadpole</h1>
   <!-- button below -->
   <% #binding.pry %>
-  <%= form_for @tadpole do |f|%>
+  <%= form_for @tadpole, :url => {:action => :metamorphose}, method: :post do |f|%>
   <%= f.submit 'Become a frog'%>
   <% end %>
   <!-- make form to make "Become a frog" button here -->

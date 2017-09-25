@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   get '/ponds/:id/destroy', to: 'ponds#destroy'
   get '/frogs/:id/destroy', to: 'frogs#destroy'
   get '/tadpoles/:id/destroy', to: 'tadpoles#destroy'
-  post '/tadpoles/:id/metamorphose', to: 'tadpoles#metamorphose'
-
+  post '/tadpoles/:id/metamorphose', to: 'tadpoles#metamorphose', as: 'tadpoles/metamorphose'
+  # patch '/tadpoles/:id/metamorphose' to: 'tadpoles#metamorpose'
   # No route matches [POST] "/tadpoles/1/metamorphose"
 
   # code your post to  '/tadpoles/:id/metamorphosize' here
