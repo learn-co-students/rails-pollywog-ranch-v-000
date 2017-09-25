@@ -8,7 +8,8 @@ class TadpolesController < ApplicationController
     color = @newfrog.color
     pond = @newfrog.pond
     @new_frog = Frog.create(:name => name, :color => color, :pond => pond)
-   
+    set_tadpole.delete
+    redirect_to @new_frog
   end
   
   def index
