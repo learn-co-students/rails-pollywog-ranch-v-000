@@ -1,6 +1,10 @@
 <div class="card">
   <h1><%= @tadpole.name %> the Tadpole</h1>
-
+  <!-- button below -->
+  <% #binding.pry %>
+  <%= form_for @tadpoles, :url => {:action => "metamorphose"} do |f| %>
+  <%= f.submit "Become a from"%>
+  <% end %>
   <!-- make form to make "Become a frog" button here -->
   <!-- the form should post to /tadpoles/:id/metamorphosize -->
 
