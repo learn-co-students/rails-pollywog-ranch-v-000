@@ -41,10 +41,10 @@ class TadpolesController < ApplicationController
   end
 
   def metamorphose
-    @frog = Frog.new(name: @tadpole.name, color: @tadpole.color, pond_id: @tadpole.pond.id)
-    if @frog.save
+    frog = Frog.new(name: @tadpole.name, color: @tadpole.color, pond_id: @tadpole.pond.id)
+    if frog.save
       @tadpole.destroy
-      redirect_to frog_path(@frog)
+      redirect_to frog, notice: "#{frog.name} the Tadpole successfully became a frog."
     else
       redirect_to tapole_path(@tadpole)
     end

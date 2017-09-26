@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   resources :tadpoles, :only => [:index, :show, :edit, :update, :destroy, :metamorphose, :create]
   patch 'tadpoles/:id/metamorphose', to: 'tadpoles#metamorphose'
-  post 'tadpoles/:id/metamorphose', to: 'tadpoles#metamorphose'
+  post 'tadpoles/:id/metamorphose', to: 'tadpoles#metamorphose', as: 'metamorphose'
 
   # nested resources
   resources :frogs do
