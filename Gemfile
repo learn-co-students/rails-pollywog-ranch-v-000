@@ -49,7 +49,7 @@ group :test, :development do
 end
 
 group :production do
-  gem "pg"
+  # gem "pg" <-- this gem can't install without the local postgres system libraries.
   gem "google-analytics-rails"
   gem "rails_12factor"
 end

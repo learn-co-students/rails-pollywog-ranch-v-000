@@ -2,14 +2,19 @@
   <h1><%= @tadpole.name %> the Tadpole</h1>
 
   <!-- make form to make "Become a frog" button here -->
+  <%= form_for(@frog, :url => url_for(:controller => 'tadpoles', :action => 'metamorphose'))do |f| %>
+    <p>Name: <%= f.text_field :name %></p>
+    <p>Pond: <%= f.text_field :pond %></p>
+    <p><%= f.submit 'Become a frog' %></p>
+  <% end %>
   <!-- the form should post to /tadpoles/:id/metamorphosize -->
 
   <p>Color: <%= @tadpole.color %></p>
   <p>Parent: <a href="/frogs/<%= @tadpole.frog.id %>"><%= @tadpole.frog.name %></a></p>
   <p>Lives: <a href="/ponds/<%= @tadpole.pond.id %>"><%= @tadpole.pond.name %></a></p>
 
-  <a href="/tadpoles">Back</a> | 
-  <a href="/tadpoles/<%= @tadpole.id %>/edit">Edit</a> | 
+  <a href="/tadpoles">Back</a> |
+  <a href="/tadpoles/<%= @tadpole.id %>/edit">Edit</a> |
   <a href="/tadpoles/<%= @tadpole.id %>/destroy">Delete</a>
 </div>
 
