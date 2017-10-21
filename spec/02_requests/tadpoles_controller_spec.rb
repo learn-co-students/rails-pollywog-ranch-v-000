@@ -9,6 +9,7 @@ describe TadpolesController, :type => :request  do
 
   describe "post tadpoles/:id/metamorphose" do
     it "makes a new frog with the tadpole's name, color, and pond" do
+      
       post "/tadpoles/#{@tadpole.id}/metamorphose"
       found_by_name = Frog.find_by(:name => @tadpole.name)
       found_by_color = Frog.find_by(:color => @tadpole.color)
@@ -29,7 +30,6 @@ describe TadpolesController, :type => :request  do
     it "redirects to the newly made frog's show page" do
       new_frog_id = Frog.last.id + 1
       post "/tadpoles/#{@tadpole.id}/metamorphose"
-      # binding.pry
       expect(response).to redirect_to("/frogs/#{new_frog_id}")
     end
   end
