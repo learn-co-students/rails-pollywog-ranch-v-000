@@ -1,6 +1,6 @@
 module TadpoleHelper
 
-  def become_a_frog_button(tadpole)
+  def become_a_frog_button
     form_tag(action: :metamorphose, method: "post") do
       submit_tag "Become a frog", class: "btn btn-primary"
     end
