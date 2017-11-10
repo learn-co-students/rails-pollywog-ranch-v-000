@@ -7,13 +7,16 @@ class TadpolesController < ApplicationController
     tadpole_name = tadpole[:name]
     tadpole_color = tadpole[:color]
     tadpole_pond_id = tadpole.pond.id
-    tadpole.destroy
 
     frog = Frog.new(name: tadpole_name , color: tadpole_color , pond_id: tadpole_pond_id)
-    frog.save
-
-    redirect_to frog_path(frog)
+    if frog.save
+      tadpole.destroy
+      redirect_to frog_path(frog), notice: "#{frog.name} blossomed into a frog."
+    else
+      render :show
+    end
   end
+
 
   def index
     @tadpoles = Tadpole.all

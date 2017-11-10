@@ -7,6 +7,11 @@
     <%= f.button "Become a frog" %>
   <% end %>
 
+  <!-- Alternate method involving form_tag instead -->
+  <%#= form_tag(metamorphose_path(@tadpole)) do %>
+    <%#= submit_tag "Become a frog", :class => 'btn btn-primary' %>
+  <%# end %>
+
   <p>Color: <%= @tadpole.color %></p>
   <p>Parent: <a href="/frogs/<%= @tadpole.frog.id %>"><%= @tadpole.frog.name %></a></p>
   <p>Lives: <a href="/ponds/<%= @tadpole.pond.id %>"><%= @tadpole.pond.name %></a></p>
