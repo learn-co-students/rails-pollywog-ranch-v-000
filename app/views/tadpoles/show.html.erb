@@ -5,12 +5,15 @@
   <!-- the form should post to /tadpoles/:id/metamorphosize -->
 
   <p>Color: <%= @tadpole.color %></p>
-  <p>Parent: <a href="/frogs/<%= @tadpole.frog.id %>"><%= @tadpole.frog.name %></a></p>
-  <p>Lives: <a href="/ponds/<%= @tadpole.pond.id %>"><%= @tadpole.pond.name %></a></p>
+  <p>Parent: <%= link_to @tadpole.frog.name, frog_path(@tadpole.frog) %></p>
+  <p>Lives: <%= link_to @tadpole.pond.name, pond_path(@tadpole.pond) %></p>
+  <p>
+    <%= form_tag(metamorphose_tadpole_path(@tadpole)) do %>
+      <%= submit_tag "Become a frog" %>
+    <% end %>
+  </p>
 
-  <a href="/tadpoles">Back</a> | 
-  <a href="/tadpoles/<%= @tadpole.id %>/edit">Edit</a> | 
-  <a href="/tadpoles/<%= @tadpole.id %>/destroy">Delete</a>
+  <%= link_to "Back", tadpoles_path %> | <%= link_to "Edit", edit_tadpole_path(@tadpole) %> | <%= link_to "Delete", destroy_tadpole_path(@tadpole) %>
 </div>
 
 <div class="card">
