@@ -13,4 +13,21 @@
 
 ActiveRecord::Schema.define(version: 20140922151507) do
 
+  create_table "frogs", force: :cascade do |t|
+    t.text    "name"
+    t.text    "color"
+    t.integer "pond_id"
+  end
+
+  create_table "ponds", force: :cascade do |t|
+    t.text "name"
+    t.text "water_type"
+  end
+
+  create_table "tadpoles", force: :cascade do |t|
+    t.text    "name"
+    t.text    "color"
+    t.integer "frog_id"
+  end
+
 end
