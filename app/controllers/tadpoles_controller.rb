@@ -3,14 +3,14 @@ class TadpolesController < ApplicationController
 
   def metamorphose
     @frog = Frog.new(name: @tadpole.name, color: @tadpole.color, pond: @tadpole.pond)
-    if @frog.save
-      @tadpole.destroy
-      respond_to do |format|
+    respond_to do |format|
+      if @frog.save
+        @tadpole.destroy
         format.html { redirect_to @frog, notice: 'Tadpole was successfully metamorphosized'}
         format.js
+      else 
+        format.html { redirect_to @tadpole, notice: 'Tadpole could not metamorphosize'}
       end
-    else 
-      format.html { redirect_to @tadpole, notice: 'Tadpole could not metamorphosize'}
     end
   end
   
