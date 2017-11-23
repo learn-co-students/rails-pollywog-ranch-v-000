@@ -5,7 +5,7 @@ class TadpolesController < ApplicationController
     @frog = Frog.new(name: @tagpole.name, color: @tagpole.color, pond: @tagpole.pond)
   end
   def index
-    @tadpoles = Tadpole.all
+    @tagpoles = Tadpole.all
   end
 
   def show
