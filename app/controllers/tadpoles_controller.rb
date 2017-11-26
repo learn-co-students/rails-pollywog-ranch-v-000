@@ -1,5 +1,5 @@
 class TadpolesController < ApplicationController
-  before_action :set_tadpole, only: [:show, :edit, :update, :destroy, :metamorphosize]
+  before_action :set_tadpole, only: [:show, :edit, :update, :destroy, :metamorphose]
 
   # add your metamorphosize action here
   
@@ -11,7 +11,7 @@ class TadpolesController < ApplicationController
   end
 
   def new
-    @frog = Frog.find(set_frog)
+    set_frog
     @tadpole = Tadpole.new
   end
 
@@ -44,6 +44,14 @@ class TadpolesController < ApplicationController
     @tadpole.destroy
     respond_to do |format|
       format.html { redirect_to tadpoles_url, notice: 'Tadpole was successfully destroyed.' }
+    end
+  end
+
+  def metamorphose
+    if @tadpole.present?
+      frog = Frog.create(name: @tadpole.name, color: @tadpole.color, pond: @tadpole.frog.pond)
+      @tadpole.destroy
+      redirect_to frog_path(frog)
     end
   end
 
