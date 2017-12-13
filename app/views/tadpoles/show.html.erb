@@ -4,6 +4,7 @@
   <!-- make form to make "Become a frog" button here -->
   <!-- the form should post to /tadpoles/:id/metamorphosize -->
   <form method="POST" action="/tadpoles/<%= @tadpole.id %>/metamorphose">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>"/>
     <input type="submit" value="Become a frog"/>
   </form>
 
