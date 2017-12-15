@@ -9,7 +9,7 @@ class TadpolesController < ApplicationController
         @tadpole.destroy
         format.html { redirect_to @frog, notice: 'Tadpole was successfully metamorphosized' }
       else
-        format.html { render "/tadpoles/#{@tadpole.id}" }
+        format.html { render :show  }
       end
     end
   end
