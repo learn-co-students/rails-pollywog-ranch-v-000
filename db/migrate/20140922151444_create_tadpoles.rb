@@ -1,3 +1,9 @@
 class CreateTadpoles < ActiveRecord::Migration
-  # code goes here
+  def change
+   create_table :tadpoles do |t|
+     t.text :name
+     t.text :color
+     t.timestamps
+   end
+ end
 end
