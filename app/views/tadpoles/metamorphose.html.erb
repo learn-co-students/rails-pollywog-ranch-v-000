@@ -1,0 +1,5 @@
+It's an exciting day in the life of your tadpole! Click button below to see what happens!
+
+<%= form_tag("/tadpoles/#{@tadpole.id}/metamorphose", method: :post) do %>
+<%= submit_tag "Become a frog" %>
+<% end %>
