@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :froms
+
   # root
   root to: 'static_pages#home'
 
