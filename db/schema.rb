@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20171217221034) do
 
   create_table "frogs", force: :cascade do |t|
@@ -36,5 +37,8 @@ ActiveRecord::Schema.define(version: 20171217221034) do
     t.integer  "pond_id"
     t.integer  "frog_id"
   end
+=======
+ActiveRecord::Schema.define(version: 0) do
+>>>>>>> 7162ff84fc9addc24d5a26a3e4811e08ce6a1e46
 
 end
