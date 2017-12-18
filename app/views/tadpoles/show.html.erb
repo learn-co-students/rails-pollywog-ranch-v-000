@@ -1,9 +1,9 @@
 <div class="card">
   <h1><%= @tadpole.name %> the Tadpole</h1>
 
-  <%= form_tag(metamorphose_path(@tadpole)) do %>
-    <%= submit_tag "Become a frog" %>
-  <% end %>
+  <form action="<%=@tadpole.id%>/metamorphose", method= "POST" %>
+  <input type="submit" value="Become a frog">
+  </form>
 
   <p>Color: <%= @tadpole.color %></p>
   <p>Parent: <a href="/frogs/<%= @tadpole.frog.id %>"><%= @tadpole.frog.name %></a></p>
