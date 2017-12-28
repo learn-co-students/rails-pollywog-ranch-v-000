@@ -13,6 +13,12 @@
   <a href="/tadpoles/<%= @tadpole.id %>/destroy">Delete</a>
 </div>
 
+<%= form_tag(metamorphose_path(@tadpole)) do %>
+  <%= submit_tag "Become a frog", :class => 'btn btn-primary' %>
+<%end%>
+
+<br>
+
 <div class="card">
   <img src="http://<%= @tadpole.color %>-tadpole.jpg.to/" alt="Tadpole Picture" width="300">
 </div>

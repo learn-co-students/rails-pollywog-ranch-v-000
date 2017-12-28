@@ -6,9 +6,11 @@
   <div class="field"><%= f.label :color %><br>
   <%= f.text_field :color %></div>
 
+<%= form_tag("/tadpoles/metamorphose", method: "post") do %>
   <div class="field">
     <%= f.hidden_field :frog_id, :value => @frog.id %>
   </div>
+  <%end%>
 
   <br>
   
