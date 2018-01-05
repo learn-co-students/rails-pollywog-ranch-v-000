@@ -172,7 +172,7 @@ GEM
       activesupport (= 4.2.0)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
-    rake (12.3.0)
+    rake (11.3.0)
     rb-fsevent (0.10.2)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
@@ -267,6 +267,7 @@ DEPENDENCIES
   pry (~> 0.10.3)
   rails (= 4.2.0)
   rails_12factor
+  rake (~> 11.0)
   rspec-rails (~> 3.3.3)
   sass-rails (= 4.0.2)
   sdoc (~> 0.4.0)
