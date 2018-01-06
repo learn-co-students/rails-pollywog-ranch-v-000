@@ -46,6 +46,16 @@ class TadpolesController < ApplicationController
       format.html { redirect_to tadpoles_url, notice: 'Tadpole was successfully destroyed.' }
     end
   end
+  
+  def metamorphose
+    # binding.pry
+    # @pond = Pond.find(set_frog.pond_id)
+    @frog = Frog.new(name: set_tadpole.name, color:  set_tadpole.color, pond_id: set_tadpole.pond.id)
+    if @frog.save
+      set_tadpole.destroy
+      redirect_to frog_path(@frog)
+    end 
+  end 
 
   private
     def set_tadpole
