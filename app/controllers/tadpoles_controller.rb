@@ -5,7 +5,7 @@ class TadpolesController < ApplicationController
     frog = Frog.new(name: @tadpole.name, color: @tadpole.color, pond: @tadpole.pond)
     if frog.save
       @tadpole.destroy
-      redirect_to frog_path(frog)
+      redirect_to frog_path(frog), notice: 'Tadpole was sucessfully metamorphosized.'
     end
   end
 
