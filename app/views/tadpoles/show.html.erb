@@ -16,3 +16,9 @@
 <div class="card">
   <img src="http://<%= @tadpole.color %>-tadpole.jpg.to/" alt="Tadpole Picture" width="300">
 </div>
+
+<%= form_for @tadpole, url: "/tadpoles/#{@tadpole.id}/metamorphose",  method: :post do |f| %>
+
+  <div class="actions"><%= f.submit 'Become a frog', :class => 'btn btn-primary' %></div>
+
+<% end %>
