@@ -54,3 +54,4 @@ group :production do
 end
 
 gem "bootstrap-sass", "~> 3.1.1"
+gem "rake", '< 11.0'
