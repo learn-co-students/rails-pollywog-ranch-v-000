@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :tadpoles
-  resources :ponds
   # root
   root to: 'static_pages#home'
 
