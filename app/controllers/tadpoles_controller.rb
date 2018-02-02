@@ -1,19 +1,5 @@
-require 'pry'
-
 class TadpolesController < ApplicationController
-  before_action :set_tadpole, only: [:show, :edit, :update, :destroy, :metamorphosize]
-
-  # # add your metamorphosize action here
-  # def metamorphosize
-  #   @tadpole = Tadpole.find(params[:id])
-  #   @frog = Frog.new(name: @tadpole.name, color: @tadpole.color, pond_id: @tadpole.pond.id )
-  #   if @frog.save
-  #     @tadpole.destroy
-  #     redirect_to frog_path(@frog)
-  #   else
-  #     redirect_to tadpole_path(@tadpole)
-  #   end
-  # end
+  before_action :set_tadpole, only: [:show, :edit, :update, :destroy, :metamorphose]
 
   def metamorphose
     frog = Frog.new(name: @tadpole.name, color: @tadpole.color, pond: @tadpole.pond)
@@ -25,13 +11,12 @@ class TadpolesController < ApplicationController
       render :show
     end
   end
-  
+
   def index
     @tadpoles = Tadpole.all
   end
 
   def show
-    @tadpole = Tadpole.find(params[:id])
   end
 
   def new
@@ -65,7 +50,6 @@ class TadpolesController < ApplicationController
   end
 
   def destroy
-    @tadpole = Tadpole.find(params[:id])
     @tadpole.destroy
     respond_to do |format|
       format.html { redirect_to tadpoles_url, notice: 'Tadpole was successfully destroyed.' }
@@ -73,15 +57,16 @@ class TadpolesController < ApplicationController
   end
 
   private
-    def set_tadpole
-      @tadpole = Tadpole.find(params[:id])
-    end
 
-    def set_frog
-      @frog = Frog.find(params[:frog_id])
-    end
+  def set_tadpole
+    @tadpole = Tadpole.find(params[:id])
+  end
 
-    def tadpole_params
-      params.require(:tadpole).permit(:name, :color, :frog_id)
-    end
+  def set_frog
+    @frog = Frog.find(params[:frog_id])
+  end
+
+  def tadpole_params
+    params.require(:tadpole).permit(:name, :color, :frog_id)
+  end
 end
