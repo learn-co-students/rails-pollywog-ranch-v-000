@@ -1,3 +1,8 @@
 class CreatePonds < ActiveRecord::Migration
-  # code goes here
+  def change
+    create_table :ponds do |c|
+      c.string :name
+      c.string :water_type
+    end 
+  end
 end
