@@ -3,13 +3,13 @@ class TadpolesController < ApplicationController
 
   # add your metamorphosize action here
   def metamorphose
-    @frog = @tadpole.to_frog
+    outcome = ConvertTadpoleToFrog.run(tadpole: @tadpole)
 
-    if @frog.save
-      @tadpole.destroy
-      redirect_to frog_path(@frog)
+    if outcome.success?
+      redirect_to frog_path(outcome.result)
     else
-      # TODO:
+      flash[:notice] = outcome.errors.message_list.join(', ')
+      redirect_to tadpole_path(@tadpole)
     end
   end
   

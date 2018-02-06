@@ -128,6 +128,8 @@ GEM
     mini_portile2 (2.3.0)
     minitest (5.11.3)
     multi_json (1.13.1)
+    mutations (0.8.1)
+      activesupport
     nenv (0.3.0)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
@@ -263,6 +265,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails (~> 4.0.5)
   launchy (~> 2.4.3)
+  mutations
   pry (~> 0.10.3)
   rails (~> 4.2.0)
   rails_12factor
