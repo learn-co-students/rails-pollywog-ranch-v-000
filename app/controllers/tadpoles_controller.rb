@@ -2,7 +2,7 @@ class TadpolesController < ApplicationController
   before_action :set_tadpole, only: [:show, :edit, :update, :destroy, :metamorphosize]
 
   # add your metamorphosize action here
-  
+
   def index
     @tadpoles = Tadpole.all
   end
@@ -13,6 +13,16 @@ class TadpolesController < ApplicationController
   def new
     @frog = Frog.find(set_frog)
     @tadpole = Tadpole.new
+  end
+
+  def metamorphose
+    @tadpole = set_tadpole
+    # @frog = Frog.find(@tadpole[:frog_id])
+    @frog = Frog.create(name: @tadpole[:name], color: @tadpole[:color], pond: @tadpole.frog.pond)
+
+    @tadpole.destroy
+
+    redirect_to frog_path(@frog)
   end
 
   def edit
