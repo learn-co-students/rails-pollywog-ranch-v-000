@@ -1,7 +1,17 @@
 class TadpolesController < ApplicationController
-  before_action :set_tadpole, only: [:show, :edit, :update, :destroy, :metamorphosize]
+  before_action :set_tadpole, only: [:show, :edit, :update, :destroy, :metamorphose]
 
   # add your metamorphosize action here
+  def metamorphose
+    frog = Frog.new(name: @tadpole.name, color: @tadpole.color, pond: @tadpole.pond)
+
+    if frog.save 
+      @tadpole.destroy 
+      redirect_to frog, notice: "#{frog.name} the Tadpole sucessfully became a frog"
+    else 
+      render :show 
+    end 
+  end 
   
   def index
     @tadpoles = Tadpole.all
@@ -31,13 +41,18 @@ class TadpolesController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @tadpole.update(tadpole_params)
-        format.html { redirect_to @tadpole, notice: 'Tadpole was successfully updated.' }
-      else
-        format.html { render :edit }
+    #binding.pry
+    #if params[:commit] == "Become a frog"
+    #   redirect_to metamorphosize
+    #else 
+      respond_to do |format|
+        if @tadpole.update(tadpole_params)
+          format.html { redirect_to @tadpole, notice: 'Tadpole was successfully updated.' }
+        else
+          format.html { render :edit }
+        end
       end
-    end
+    #end 
   end
 
   def destroy
@@ -57,6 +72,11 @@ class TadpolesController < ApplicationController
     end
 
     def tadpole_params
-      params.require(:tadpole).permit(:name, :color, :frog_id)
+   #   if params[:commit] == "Become a frog"
+   #    redirect_to metamorphosize
+   #  else 
+        params.require(:tadpole).permit(:name, :color, :frog_id)
+   #   end 
     end
+    
 end
