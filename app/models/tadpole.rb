@@ -1,3 +1,4 @@
 class Tadpole < ActiveRecord::Base
-  # code goes here
-end
+  belongs_to :frog
+  delegate :pond, to: :frog
+ end
