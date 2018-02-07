@@ -5,23 +5,26 @@ describe TadpolesController, :type => :request  do
     @pond = Pond.create(:name => "Walden", :water_type => "alkaline")
     @frog = Frog.create(:name => "Kermit", :color => "green",  :pond_id => @pond.id)
     @tadpole = Tadpole.create(:name => "Linda", :color => "tan", :frog_id => @frog.id)
+    @name = @tadpole.name
+    @color = @tadpole.color
+    @pond = @tadpole.pond
   end
 
   describe "post tadpoles/:id/metamorphose" do
     it "makes a new frog with the tadpole's name, color, and pond" do
       post "/tadpoles/#{@tadpole.id}/metamorphose"
-      found_by_name = Frog.find_by(:name => @tadpole.name)
-      found_by_color = Frog.find_by(:color => @tadpole.color)
-      expect(found_by_color.name).to eq(@tadpole.name)
-      expect(found_by_name.color).to eq(@tadpole.color)
-      expect(found_by_name.pond).to eq(@tadpole.pond)
+      found_by_name = Frog.find_by(:name => @name)
+      found_by_color = Frog.find_by(:color => @color)
+      expect(found_by_color.name).to eq(@name)
+      expect(found_by_name.color).to eq(@color)
+      expect(found_by_name.pond).to eq(@pond)
       expect(found_by_name).to eq(found_by_color)
     end
 
     it "deletes the tadpole from the database" do
       post "/tadpoles/#{@tadpole.id}/metamorphose"
-      found_by_name = Tadpole.find_by(:name => @tadpole.name)
-      found_by_color = Tadpole.find_by(:color => @tadpole.color)
+      found_by_name = Tadpole.find_by(:name => @name)
+      found_by_color = Tadpole.find_by(:color => @color)
       expect(found_by_color).to be_nil
       expect(found_by_name).to be_nil
     end
