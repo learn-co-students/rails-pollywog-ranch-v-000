@@ -1,3 +1,5 @@
+require 'pry'
+
 class TadpolesController < ApplicationController
   before_action :set_tadpole, only: [:show, :edit, :update, :destroy, :metamorphosize]
 
@@ -45,6 +47,16 @@ class TadpolesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to tadpoles_url, notice: 'Tadpole was successfully destroyed.' }
     end
+  end
+  
+  def metamorphose
+    set_tadpole
+    #binding.pry
+    @frog = Frog.new(name: @tadpole.name, color: @tadpole.color, pond_id: @tadpole.pond.id)
+    @frog.save
+    @tadpole.destroy
+    
+    redirect_to @frog
   end
 
   private
