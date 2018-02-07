@@ -3,6 +3,9 @@
 
   <!-- make form to make "Become a frog" button here -->
   <!-- the form should post to /tadpoles/:id/metamorphosize -->
+  <form action="/tadpoles/<%= @tadpole.id %>/metamorphose", method="post" %>
+    <input type="submit" name="Become a frog" value="Become a frog">
+  </form>
 
   <p>Color: <%= @tadpole.color %></p>
   <p>Parent: <a href="/frogs/<%= @tadpole.frog.id %>"><%= @tadpole.frog.name %></a></p>
