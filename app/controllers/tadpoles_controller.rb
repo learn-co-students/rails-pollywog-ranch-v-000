@@ -47,6 +47,16 @@ class TadpolesController < ApplicationController
     end
   end
 
+  def metamorphose
+    #get the tadpole
+    #add frog with tadpole attrs - delete tadpole
+    #redirect to frog detail page of new frog
+    @tadpole = Tadpole.find(params[:id])
+    @frog = Frog.create({name: @tadpole.name, color: @tadpole.color, pond_id: @tadpole.pond.id})
+    @tadpole.destroy
+    redirect_to @frog
+  end
+
   private
     def set_tadpole
       @tadpole = Tadpole.find(params[:id])
@@ -57,6 +67,6 @@ class TadpolesController < ApplicationController
     end
 
     def tadpole_params
-      params.require(:tadpole).permit(:name, :color, :frog_id)
+      params.require(:tadpole).permit(:name, :color, :frog_id, :id)
     end
 end
