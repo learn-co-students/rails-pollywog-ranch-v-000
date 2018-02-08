@@ -9,7 +9,7 @@ describe Tadpole do
     expect(tad.color).to eq('maroon5')
   end
 
-  it 'belongs to a frog' do 
+  it 'belongs to a frog' do
     kermit = Frog.create(:name => "Kermit", :color => "green")
     tad = Tadpole.create(:name => "Tad", :color => "maroon5", :frog_id => kermit.id)
 
@@ -19,7 +19,7 @@ describe Tadpole do
     expect(updated_kermit.tadpoles).to include(tad)
   end
 
-  it 'belongs to a pond through a frog' do 
+  it 'belongs to a pond through a frog' do
     walden = Pond.create(:name => "Walden", :water_type => "alkaline")
     kermit = Frog.create(:name => "Kermit", :color => "green", :pond_id => walden.id)
     tad = Tadpole.create(:name => "Tad", :color => "maroon5", :frog_id => kermit.id)
