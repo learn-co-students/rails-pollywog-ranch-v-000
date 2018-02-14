@@ -1,3 +1,13 @@
 class CreateFrogs < ActiveRecord::Migration
-  # code goes here
+  def up
+    create_table :frogs do |t|
+      t.string :name
+      t.string :color
+      t.belongs_to :pond
+    end
+  end
+
+  def down
+    drop_table :frogs
+  end
 end
