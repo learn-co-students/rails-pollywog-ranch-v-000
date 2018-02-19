@@ -3,10 +3,13 @@ class TadpolesController < ApplicationController
 
   # add your metamorphose action here
   def metamorphose
-    @tadpole = Tadpole.find(params[:id])
-    @frog = Frog.create(name: @tadpole.name, color: @tadpole.color, pond_id: @tadpole.pond.id)
-    @tadpole.destroy
-    redirect_to frog_path(@frog)
+    @frog = Frog.new(name: @tadpole.name, color: @tadpole.color, pond_id: @tadpole.pond.id)
+    if @frog.save
+      @tadpole.destroy
+      redirect_to frog_path(@frog)
+    else
+      render :show
+    end
   end
 
   def index
