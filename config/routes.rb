@@ -10,11 +10,12 @@ Rails.application.routes.draw do
 
   # code your post to  '/tadpoles/:id/metamorphose' here
   # it should direct to the tadpoles controller, the metamorphose action
+  post '/tadpoles/:id/metamorphose', to: 'tadpoles#metamorphose'
 
   # resources
   resources :ponds
+  resources :tadpoles
 
-  resources :tadpoles, :only => [:index, :show, :edit, :update, :destroy, :metamorphose, :create]
 
   # nested resources
   resources :frogs do

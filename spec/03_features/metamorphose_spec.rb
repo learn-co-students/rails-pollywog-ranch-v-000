@@ -13,7 +13,9 @@ describe "Metamorphose" do
   end
 
   it "can click on the button and the tadpole becomes a frog" do
+    # binding.pry
     click_button('Become a frog')
+    # binding.pry
 
     # deletes the tadpole from the database
     expect(Tadpole.find_by(:name => @tadpole.name)).to be_nil
