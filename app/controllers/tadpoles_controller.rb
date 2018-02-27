@@ -9,7 +9,7 @@ class TadpolesController < ApplicationController
     @frog.pond = @tadpole.pond
     @tadpole.destroy
     @frog.save
-    binding.pry
+    # binding.pry
     redirect_to frog_path(@frog)
   end
 

@@ -11,7 +11,10 @@
   <a href="/tadpoles">Back</a> |
   <a href="/tadpoles/<%= @tadpole.id %>/edit">Edit</a> |
   <a href="/tadpoles/<%= @tadpole.id %>/destroy">Delete</a>
-  <button type='submit' method='POST' path='/tadpoles/<%=@tadpole.id%>/metamorphose'>Become a frog</button>
+  <!--<button type='submit' method='POST' path='/tadpoles/<%=@tadpole.id%>/metamorphose'>Become a frog</button>-->
+  <form id='Become a frog' type='submit' method='POST' action='/tadpoles/<%=@tadpole.id%>/metamorphose'>
+    <button>Become a frog</button>
+  </form>
 </div>
 
 <div class="card">
