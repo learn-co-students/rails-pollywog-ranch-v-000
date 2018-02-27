@@ -3,10 +3,14 @@
 
   <!-- make form to make "Become a frog" button here -->
   <!-- the form should post to /tadpoles/:id/metamorphose -->
-
   <p>Color: <%= @tadpole.color %></p>
   <p>Parent: <a href="/frogs/<%= @tadpole.frog.id %>"><%= @tadpole.frog.name %></a></p>
   <p>Lives: <a href="/ponds/<%= @tadpole.pond.id %>"><%= @tadpole.pond.name %></a></p>
+
+  <%= form_tag("/tadpoles/#{@tadpole.id}/metamorphose") do %>
+    <%= submit_tag "Become a frog" %>
+  <% end %>
+
 
   <a href="/tadpoles">Back</a> |
   <a href="/tadpoles/<%= @tadpole.id %>/edit">Edit</a> |
