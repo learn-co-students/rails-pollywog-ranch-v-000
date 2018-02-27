@@ -3,6 +3,13 @@ class TadpolesController < ApplicationController
 
   # add your metamorphose action here
 
+  def metamorphose
+    set_tadpole
+    @frog = Frog.create(name: @tadpole.name, pond: @tadpole.pond, color: @tadpole.color)
+    @tadpole.destroy
+    redirect_to frog_path(@frog)
+  end
+
   def index
     @tadpoles = Tadpole.all
   end
@@ -59,4 +66,5 @@ class TadpolesController < ApplicationController
     def tadpole_params
       params.require(:tadpole).permit(:name, :color, :frog_id)
     end
+
 end
