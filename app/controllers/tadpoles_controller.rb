@@ -1,7 +1,20 @@
 class TadpolesController < ApplicationController
   before_action :set_tadpole, only: [:show, :edit, :update, :destroy, :metamorphose]
-
+  before_action :set_frog, only: [:new, :show]
   # add your metamorphose action here
+  def metamorphose
+    # tadpole becomes a frog, exchange atrributes, then save, then redirect ? 
+ 
+    @frog = Frog.new(name: @tadpole.name, color: @tadpole.color, pond: @tadpole.pond)
+    if 
+      @frog.save
+      @tadpole.destroy
+
+      redirect_to @frog, notice: "#{@frog.name} the Tadpole successfully became a frog."
+    else
+      render :show
+    end
+  end
 
   def index
     @tadpoles = Tadpole.all
@@ -47,13 +60,14 @@ class TadpolesController < ApplicationController
     end
   end
 
+
   private
     def set_tadpole
       @tadpole = Tadpole.find(params[:id])
     end
 
     def set_frog
-      @frog = Frog.find(params[:frog_id])
+      @frog = Frog.find(params[:id])
     end
 
     def tadpole_params
