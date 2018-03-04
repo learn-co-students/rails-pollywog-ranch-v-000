@@ -11,6 +11,10 @@
   <a href="/tadpoles">Back</a> |
   <a href="/tadpoles/<%= @tadpole.id %>/edit">Edit</a> |
   <a href="/tadpoles/<%= @tadpole.id %>/destroy">Delete</a>
+
+  <%= form_tag "/tadpoles/#{@tadpole.id}/metamorphose", method: 'post' do %>
+    <%= submit_tag 'Become a frog' %>
+  <% end %>
 </div>
 
 <div class="card">
