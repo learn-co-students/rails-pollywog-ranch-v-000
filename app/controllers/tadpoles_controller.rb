@@ -2,6 +2,24 @@ class TadpolesController < ApplicationController
   before_action :set_tadpole, only: [:show, :edit, :update, :destroy, :metamorphose]
 
   # add your metamorphose action here
+  def metamorphose
+    @frog = Frog.create(name: @tadpole.name, color: @tadpole.color, pond: @tadpole.pond)
+    @tadpole.destroy
+      redirect_to frog_path(@frog) #Expected "http://www.example.com/frogs/2" to be === "http://www.example.com/frogs/1".
+  end
+
+    #if params[:tadpole_id]
+    #   @tadpole = Tadpole.find_by(id:params[tadpole_id])
+    #   @frog = @tadpole.frogs.find_by(id:params[:id])
+    #    @tadpole.destroy
+    #end
+        # if @frog.nil?
+          # redirect_to tadpole_frogs_path(@tadpole), alert: "Tadpole not found"
+        # end
+    # else
+    #  @frog = Frog.find(params[:id])
+    # end
+
 
   def index
     @tadpoles = Tadpole.all

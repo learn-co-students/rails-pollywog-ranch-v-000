@@ -2,7 +2,20 @@
   <h1><%= @tadpole.name %> the Tadpole</h1>
 
   <!-- make form to make "Become a frog" button here -->
+  <%= submit_tag 'Become a frog' %>
   <!-- the form should post to /tadpoles/:id/metamorphose -->
+  <%= form_tag("/tadpoles/:id/metamorphose", method: "post") do %>
+
+  <% end %>
+  <!-- <% name @tadpole.name %> -->
+  <!-- <%= form_for(@tadpoles) do |f| %> -->
+  <!-- <% color @tadpole.color %> -->
+  <!-- <% pond @tadpole.pond %> -->
+
+<!-- <h1>Frog name<%= f.text_area :name %></h1> -->
+<!-- <p>Frog color<%= f.text_area :color %><br></p> -->
+<!-- <p>Frog pond<%= f.text_area :pond %></p> -->
+
 
   <p>Color: <%= @tadpole.color %></p>
   <p>Parent: <a href="/frogs/<%= @tadpole.frog.id %>"><%= @tadpole.frog.name %></a></p>
