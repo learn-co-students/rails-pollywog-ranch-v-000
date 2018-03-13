@@ -1,7 +1,20 @@
 class TadpolesController < ApplicationController
   before_action :set_tadpole, only: [:show, :edit, :update, :destroy, :metamorphose]
 
-  # add your metamorphose action here
+  def metamorphose
+    binding.pry
+   #define a tadpole done with private set_tadpole action
+   #create a Frog with tadpole data
+      frog = Frog.new(name: @tadpole.name, color: @tadpole.color, pond: @tadpole.pond)
+   #destroy tadpole
+      if frog.save #if valid save then
+          @tadpole.destroy
+          redirect_to frog, notice: "#{frog.name} the Tadpole successfully became a frog."
+      else
+          render :show
+      end
+
+  end
 
   def index
     @tadpoles = Tadpole.all
@@ -46,12 +59,7 @@ class TadpolesController < ApplicationController
       format.html { redirect_to tadpoles_url, notice: 'Tadpole was successfully destroyed.' }
     end
   end
-  def metamorphose
-    binding.pry
-   #define a tadpole
-   #create a Frog with tadpole data
-   #destroy tadpole
-  end
+
 
   private
     def set_tadpole
