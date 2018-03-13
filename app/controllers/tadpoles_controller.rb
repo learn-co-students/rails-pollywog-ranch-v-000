@@ -48,8 +48,11 @@ class TadpolesController < ApplicationController
   end
   def metamorphose
     binding.pry
+   #define a tadpole
+   #create a Frog with tadpole data
+   #destroy tadpole
   end
-  
+
   private
     def set_tadpole
       @tadpole = Tadpole.find(params[:id])
