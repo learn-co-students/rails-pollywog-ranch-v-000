@@ -2,7 +2,7 @@ class TadpolesController < ApplicationController
   before_action :set_tadpole, only: [:show, :edit, :update, :destroy, :metamorphose]
 
   def metamorphose
-    binding.pry
+    #binding.pry
    #define a tadpole done with private set_tadpole action
    #create a Frog with tadpole data
       frog = Frog.new(name: @tadpole.name, color: @tadpole.color, pond: @tadpole.pond)
