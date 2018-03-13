@@ -46,7 +46,10 @@ class TadpolesController < ApplicationController
       format.html { redirect_to tadpoles_url, notice: 'Tadpole was successfully destroyed.' }
     end
   end
-
+  def metamorphose
+    binding.pry
+  end
+  
   private
     def set_tadpole
       @tadpole = Tadpole.find(params[:id])
@@ -59,4 +62,5 @@ class TadpolesController < ApplicationController
     def tadpole_params
       params.require(:tadpole).permit(:name, :color, :frog_id)
     end
+
 end
