@@ -52,3 +52,8 @@ Here's a [demo](http://the-pollywog-ranch.herokuapp.com) of what we're aiming fo
 * [Rails Guides on Routing](http://guides.rubyonrails.org/routing.html) — [Nested Resources](http://guides.rubyonrails.org/routing.html#nested-resources)
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/rails-pollywog-ranch' title='Rails Pollywog Ranch Lab'>Rails Pollywog Ranch Lab</a> on Learn.co and start learning to code for free.</p>
+
+
+To enable sprockets_better_errors
+add this line to your `config/environments/development.rb:
+  config.assets.raise_production_errors = true
