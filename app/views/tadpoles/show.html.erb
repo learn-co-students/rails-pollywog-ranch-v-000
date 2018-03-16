@@ -1,7 +1,12 @@
+
 <div class="card">
   <h1><%= @tadpole.name %> the Tadpole</h1>
 
   <!-- make form to make "Become a frog" button here -->
+  <form id='Become a frog' type='submit' method='POST' action='/tadpoles/<%=@tadpole.id%>/metamorphose'>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <button>Become a frog</button>
+  </form>
   <!-- the form should post to /tadpoles/:id/metamorphose -->
 
   <p>Color: <%= @tadpole.color %></p>
