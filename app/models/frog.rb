@@ -9,5 +9,6 @@ class Frog < ActiveRecord::Base
     frog.pond = tadpole.pond
     tadpole.destroy
     frog.save
+    frog
   end
 end
