@@ -11,6 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140922151507) do
+ActiveRecord::Schema.define(version: 20180320192901) do
+
+  create_table "frogs", force: :cascade do |t|
+    t.string   "name"
+    t.string   "color"
+    t.integer  "pond_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "frogs", ["pond_id"], name: "index_frogs_on_pond_id"
+
+  create_table "ponds", force: :cascade do |t|
+    t.string   "name"
+    t.string   "water_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tadpoles", force: :cascade do |t|
+    t.string   "name"
+    t.string   "color"
+    t.integer  "frog_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "tadpoles", ["frog_id"], name: "index_tadpoles_on_frog_id"
 
 end
