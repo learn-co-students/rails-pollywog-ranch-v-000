@@ -1,8 +1,9 @@
 class CreateFrogs < ActiveRecord::Migration
   def change
     create_table :frogs do |t|
-      t.string :water_type
       t.string :name
-    end
+      t.string :color
+      t.integer :pond_id
+    end 
   end
 end
