@@ -1,3 +1,4 @@
 class CreateFrogs < ActiveRecord::Migration
-  # code goes here
+  t.string :name
+  t.string :color
 end
