@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get '/frogs/:id/destroy', to: 'frogs#destroy'
   get '/tadpoles/:id/destroy', to: 'tadpoles#destroy'
 
-  post '/tadpoles/:id/metamorphose', to: 'tadpoles#metamorphose'
+  post '/tadpoles/:id/metamorphose', to: 'tadpoles#metamorphose', as: 'metamorphose'
   # resources :tadpoles do
   #   resources :metamorphose, :only => [:index]
   # end
