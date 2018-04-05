@@ -1,4 +1,8 @@
 class CreateTadpoles < ActiveRecord::Migration
-  t.string :name
-  t.string :color
+  def change
+    create_table :tadpoles do |t|
+      t.string :name
+      t.string :color
+    end
+  end
 end
