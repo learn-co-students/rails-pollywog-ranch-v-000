@@ -2,6 +2,10 @@
   <h1><%= @tadpole.name %> the Tadpole</h1>
 
   <!-- make form to make "Become a frog" button here -->
+  <%= form_for @tadpole, url: "/tadpoles/#{@tadpole.id}/metamorphose", method: :post do |f| %>
+    <%= f.hidden_field :metamorphose, :value => true %>
+    <%= f.submit 'Become a frog', :class => 'btn btn-primary' %>
+  <% end %>
   <!-- the form should post to /tadpoles/:id/metamorphose -->
 
   <p>Color: <%= @tadpole.color %></p>
