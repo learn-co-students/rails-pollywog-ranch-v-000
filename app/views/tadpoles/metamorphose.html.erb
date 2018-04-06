@@ -1,0 +1,9 @@
+<div class="card">
+  <h1><%= @tadpole.name %> the Frog</h1>
+
+   <p>Color: <%= @tadpole.frog.color %></p>
+  <p>Parent: <a href="/frogs/<%= @tadpole.frog.id %>"><%= @tadpole.frog.name %></a></p>
+  <p>Lives: <a href="/ponds/<%= @tadpole.pond.id %>"><%= @tadpole.pond.name %></a></p>
+
+  <br>
+  
