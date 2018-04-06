@@ -11,11 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140922151507) do
+ActiveRecord::Schema.define(version: 20180406201634) do
 
   create_table "frogs", force: :cascade do |t|
-    t.string "name"
-    t.string "color"
+    t.string  "name"
+    t.string  "color"
+    t.integer "pond_id"
   end
 
   create_table "ponds", force: :cascade do |t|
@@ -24,8 +25,9 @@ ActiveRecord::Schema.define(version: 20140922151507) do
   end
 
   create_table "tadpoles", force: :cascade do |t|
-    t.string "name"
-    t.string "color"
+    t.string  "name"
+    t.string  "color"
+    t.integer "frog_id"
   end
 
 end
