@@ -32,7 +32,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # gem 'debugger', group: [:development, :test]
 
 group :test, :development do
-  gem "rspec-rails", '~> 3.3.3'
+  gem "rspec-rails"
   gem "capybara", '~> 2.5.0'
   gem "selenium-webdriver", '~> 2.48.1'
   gem "better_errors", '~> 2.1.1'
@@ -54,4 +54,4 @@ group :production do
 end
 
 gem "bootstrap-sass", "~> 3.1.1"
-gem "rake", '< 11.0'
+gem "rake"
