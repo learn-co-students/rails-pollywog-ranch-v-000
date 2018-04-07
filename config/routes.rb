@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get '/frogs/:id/destroy', to: 'frogs#destroy'
   get '/tadpoles/:id/destroy', to: 'tadpoles#destroy'
   
-  get '/tadpoles/:id/metamorphose', to: 'tadpoles#metamorphose'
+  # get '/tadpoles/:id/metamorphose', to: 'tadpoles#metamorphose'
   post '/tadpoles/:id/metamorphose', to: 'tadpoles#metamorphose'
 
   # code your post to  '/tadpoles/:id/metamorphose' here
