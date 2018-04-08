@@ -4,10 +4,8 @@ class TadpolesController < ApplicationController
   def metamorphose
  
   frog = Frog.create(:name => @tadpole.name, :color => @tadpole.color, :pond => @tadpole.pond)
-  if frog
-    @tadpole.destroy
+    @tadpole.destroy  
     redirect_to frog
-  end
   end
 
   def index
