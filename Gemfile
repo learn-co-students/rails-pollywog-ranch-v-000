@@ -7,9 +7,11 @@ gem 'sass-rails'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'uglifier'
 gem 'bootsnap'
-
+gem 'bootstrap-sass'
 gem 'sqlite3', '~>1.3.6'
-gem 'factory_girl_rails'
+gem 'factory_bot'
+
+
 group :development, :test do
   gem 'rack_session_access'
   gem "capybara"
