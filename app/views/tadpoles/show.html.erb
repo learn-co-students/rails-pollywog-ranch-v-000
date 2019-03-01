@@ -1,6 +1,9 @@
 <div class="card">
   <h1><%= @tadpole.name %> the Tadpole</h1>
 
+  <form action='<%= @tadpole.id %>/metamorphose' method='post'>
+    <input type="submit" name="Become a frog" value="Become a frog">
+  </form>
   <!-- make form to make "Become a frog" button here -->
   <!-- the form should post to /tadpoles/:id/metamorphose -->
 
