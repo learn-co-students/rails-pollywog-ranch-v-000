@@ -20,12 +20,7 @@ group :development, :test do
   gem "rspec-rails"
 end
 
-<<<<<<< HEAD
 group :test do
   gem 'rspec-collection_matchers'
-=======
-group :production do
-  gem "google-analytics-rails"
-  gem "rails_12factor"
->>>>>>> remove pg gem - solution
+
 end
