@@ -11,6 +11,11 @@
   <a href="/tadpoles">Back</a> |
   <a href="/tadpoles/<%= @tadpole.id %>/edit">Edit</a> |
   <a href="/tadpoles/<%= @tadpole.id %>/destroy">Delete</a>
+   <form action="<%= @tadpole.id %>/metamorphose" method="post">
+     <input type="submit" value="Become a frog" />
+   </form>
+   
+  
 </div>
 
 <div class="card">
