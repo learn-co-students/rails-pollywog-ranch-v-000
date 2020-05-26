@@ -17,7 +17,7 @@ Here's a [demo](http://the-pollywog-ranch.herokuapp.com) of what we're aiming fo
 ## Instructions
 
 #### Getting Started
-* Run `bundle install`, `rake db:test:prepare` (if `rake db:migrate RAILS_ENV=test`/`bin/rails db:migrate RAILS_ENV=test` is not working properly, and then `rspec` to see what course to take. Keep in mind that, for the association of `tadpoles` belonging to a `pond` through a `frog`, you'll have to [delegate](http://stackoverflow.com/a/11457714).
+* Run `bundle install`, `rake db:test:prepare` (if `rake db:migrate RAILS_ENV=test`/`bin/rails db:migrate RAILS_ENV=test` is not working properly), and then `rspec` to see what course to take. Keep in mind that, for the association of `tadpoles` belonging to a `pond` through a `frog`, you'll have to [delegate](http://stackoverflow.com/a/11457714).
 * Take a look at the tests in `spec/models` before writing your migrations.
 * Once your migrations are done, start on the associations in your models.
 * Once the associations are passing, you'll be modifying three files:
