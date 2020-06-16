@@ -50,5 +50,3 @@ Here's a [demo](http://the-pollywog-ranch.herokuapp.com) of what we're aiming fo
 * [Pivotal Labs — Delegation](https://content.pivotal.io/blog/rails-delegates-are-even-more-useful-than-i-knew)
 * [Tutorials Point: Ruby on Rails](http://www.tutorialspoint.com/ruby-on-rails/) — [Ruby on Rails Directory Structure](http://www.tutorialspoint.com/ruby-on-rails/rails-directory-structure.htm)
 * [Rails Guides on Routing](http://guides.rubyonrails.org/routing.html) — [Nested Resources](http://guides.rubyonrails.org/routing.html#nested-resources)
-
-<p data-visibility='hidden'>View <a href='https://learn.co/lessons/rails-pollywog-ranch' title='Rails Pollywog Ranch Lab'>Rails Pollywog Ranch Lab</a> on Learn.co and start learning to code for free.</p>
